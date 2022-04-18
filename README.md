@@ -1,0 +1,1 @@
+Se agregan animaciones en general + Slider con animaciones.

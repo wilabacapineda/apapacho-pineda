@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="./assets/img/icon.png">
     <script src="https://kit.fontawesome.com/9d11d30b0e.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
     <title>APAPACHO | Diseño Infantil</title>
 </head>
@@ -14,7 +15,7 @@
         <header>
             <div class="main-header">
                 <!-- Titulo principal -->
-                <div class="logo">
+                <div class="logo animate__animated animate__zoomIn">
                     <div class="logo-img">
                         <img src="./assets/img/logo.jpg" alt="Logo Apapacho">
                     </div>
@@ -43,20 +44,66 @@
             </div>
         </header>     
         <main>
-            <section id="slider"> 
-                <div id="slide1">
-                    <div class="tela">                    
-                        <h2>Vestuario hecho a mano para apapachar a quienes amas</h2>
-                        <span class="tela-margen"><a href="./pages/tienda.html" class="boton">Visita nuestra tienda <i class="fa-solid fa-store"></i></a></span>
+            <section class="carousel animate__animated animate__fadeIn" id="slider" aria-label="Gallery"> 
+                <ol class="carousel__viewport">
+                    <li id="carousel__slide1" tabindex="0" class="carousel__slide">
+                        <div class="slide-div" id="slide1">
+                            <div class="tela">                    
+                                <h2>Vestuario hecho a mano para apapachar a quienes amas</h2>
+                                <span class="tela-margen"><a href="./pages/tienda.html" class="boton">Visita nuestra tienda <i class="fa-solid fa-store"></i></a></span>
+                            </div>
+                        </div>
+                        <div class="carousel__snapper">
+                        <a href="#carousel__slide4" class="carousel__prev">Go to last slide</a>
+                        <a href="#carousel__slide2" class="carousel__next">Go to next slide</a>
+                        </div>
+                    </li>
+                    <li id="carousel__slide2" tabindex="0" class="carousel__slide">
+                      <div class="carousel__snapper"></div>
+                      <a href="#carousel__slide1" class="carousel__prev">Go to previous slide</a>
+                      <a href="#carousel__slide3" class="carousel__next">Go to next slide</a>
+                    </li>
+                    <li id="carousel__slide3" tabindex="0" class="carousel__slide">
+                      <div class="carousel__snapper"></div>
+                      <a href="#carousel__slide2" class="carousel__prev">Go to previous slide</a>
+                      <a href="#carousel__slide4" class="carousel__next">Go to next slide</a>
+                    </li>
+                    <li id="carousel__slide4" tabindex="0" class="carousel__slide">
+                      <div class="carousel__snapper"></div>
+                      <a href="#carousel__slide3" class="carousel__prev">Go to previous slide</a>
+                      <a href="#carousel__slide1" class="carousel__next">Go to first slide</a>
+                    </li>
+                </ol>
+                <aside class="carousel__navigation">
+                    <div class="carousel__navigation-list-prevDiv">
+                        <ol class="carousel__navigation-list animate__animated animate__bounce">
+                            <li class="carousel__navigation-item">
+                              <a href="#carousel__slide1"
+                                 class="carousel__navigation-button">Go to slide 1</a>
+                            </li>
+                            <li class="carousel__navigation-item">
+                              <a href="#carousel__slide2"
+                                 class="carousel__navigation-button">Go to slide 2</a>
+                            </li>
+                            <li class="carousel__navigation-item">
+                              <a href="#carousel__slide3"
+                                 class="carousel__navigation-button">Go to slide 3</a>
+                            </li>
+                            <li class="carousel__navigation-item">
+                              <a href="#carousel__slide4"
+                                 class="carousel__navigation-button">Go to slide 4</a>
+                            </li>
+                          </ol>
                     </div>
-                </div>       
+                    
+                </aside>
             </section>
             <section id="productos_destacados_parent">
                 <div id="productos_destacados_child">
                     <h2>Productos Destacados</h2>
                     <article>
                         <div class="productos">
-                            <div id="producto_1" class="producto">
+                            <div id="producto_1" class="producto animate__animated animate__flipinX">
                                 <div class="producto_imagen">
                                     <img src="./assets/img/ModeloAmapola.jpg" alt="Modelo Amapola">
                                 </div>
@@ -76,7 +123,7 @@
                                     </div>
                                 </a>
                             </div>
-                            <div id="producto_2" class="producto">
+                            <div id="producto_2" class="producto animate__animated animate__flipinX">
                                 <div class="producto_imagen">
                                     <img src="./assets/img/ModeloAmaranta.jpg" alt="Modelo Amaranta">
                                 </div>
@@ -96,7 +143,7 @@
                                     </div>
                                 </a>
                             </div>
-                            <div id="producto_3" class="producto">
+                            <div id="producto_3" class="producto animate__animated animate__flipinX">
                                 <div class="producto_imagen">
                                     <img src="./assets/img/ModeloJacinto.jpg" alt="Modelo Jacinto">
                                 </div>
@@ -116,7 +163,7 @@
                                     </div>
                                 </a>
                             </div>
-                            <div id="producto_4" class="producto">
+                            <div id="producto_4" class="producto animate__animated animate__flipinX">
                                 <div class="producto_imagen">
                                     <img src="./assets/img/ModeloNomeolvides.jpg" alt="Modelo No me olvides">
                                 </div>
@@ -136,7 +183,7 @@
                                     </div>
                                 </a>
                             </div>
-                            <div id="producto_5" class="producto">
+                            <div id="producto_5" class="producto animate__animated animate__flipinX">
                                 <div class="producto_imagen">
                                     <img src="./assets/img/ModeloVioleta.jpg" alt="Modelo Violeta">
                                 </div>
