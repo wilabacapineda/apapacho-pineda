@@ -202,8 +202,8 @@
 
     .slider_apa .tela .tela-margen {
         padding:1rem;
-        margin: 1rem;
     } 
+    
     .slider_apa .tela .carousel-caption {
         position: unset;
     }
@@ -578,9 +578,6 @@
 }
 
 @media screen and (max-width:990px) {
-    .principal-nav {
-        
-    }
 
     .menu-fixed {
         position: fixed;
@@ -607,6 +604,9 @@
 
 @media screen and (max-width:768px) {
 
+    footer .container .row {
+        flex-direction: column;
+    }
 
     header .main-header {
         padding: 1rem 1rem 0;
