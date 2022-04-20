@@ -574,12 +574,25 @@
     aside {
         margin-top: 2rem!important;
     }
+
+    .paginas .padding-right{
+        padding-right: 0;
+    }
+
+    .paginas article {
+        width: 90%;
+        margin: 0 auto;
+    }
        
 }
 
 @media screen and (max-width:420px) {
     header .logo {
         flex-direction: column;
+    }
+
+    h2, h3   {
+        text-align: center;
     }
 
     
