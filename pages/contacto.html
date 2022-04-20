@@ -13,7 +13,7 @@
     <title>APAPACHO | Contacto</title>
 </head>
 <body>
-    <header>
+    <header class="shadow-bottom">
         <div class="row justify-content-md-center">
             <!-- Titulo principal -->
             <div class="logo animate__animated animate__zoomIn">
@@ -60,34 +60,34 @@
             </nav>
         </div>
     </header>    
-    <main class="paginas">
-        <div class="main-section-group">
+    <main class="row paginas">
+        <div class="main-section main-section-group">
             <section>
                 <h2>Contacto</h2>
-                <article>
-                    <form id="contact-form" action="" method="post">
-                        <div id="contact-form-name" class="contact-form-input">
-                            <label for="nombre">Nombre: </label>
-                            <input type="text" name="nombre" id="nombre">
+                <article>                    
+                    <form class="row g-3">
+                        <div class="col-12">
+                            <label for="inputName4" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="inputName4" placeholder="Nombre Apellido" aria-label="Nombre">
                         </div>
-                        <div id="contact-form-mail" class="contact-form-input">
-                            <label for="correo">Correo Eléctronico: </label>
-                            <input type="mail" name="correo" id="correo">
+                        <div class="col-md-12">
+                          <label for="inputEmail4" class="form-label">Correo Eléctronico</label>
+                          <input type="email" class="form-control" id="inputEmail4" placeholder="correo@correo.com">
                         </div>
-                        <div id="contact-form-tel" class="contact-form-input">
-                            <label for="telefono">Télefono:</label>
-                            <input type="tel" name="telefono" id="telefono">
+                        <div class="col-12">
+                          <label for="inputTel" class="form-label">Télefono</label>
+                          <input type="tel" class="form-control" id="inputTel" placeholder="+56987654321">
                         </div>
-                        <div id="contact-form-subject" class="contact-form-input">
-                            <label for="asunto">Asunto:</label>
-                            <input type="text" name="asunto" id="asunto">
+                        <div class="col-12">
+                            <label for="inputSubject" class="form-label">Asunto</label>
+                            <input type="tel" class="form-control" id="inputSubject" placeholder="Escriba el asunto">
                         </div>
-                        <div id="contact-form-message" class="contact-form-input">
-                            <label for="cuerpo">Mensaje:</label>
-                            <textarea name="cuerpo" id="cuerpo" cols="30" rows="10"></textarea>
+                        <div class="col-12">
+                            <label for="textareaMessage" class="form-label">Mensaje</label>
+                            <textarea class="form-control" id="textareaMessage" rows="3" placeholder="Escriba aquí el mensaje"></textarea>
                         </div>
-                        <div id="contact-form-submit" class="contact-form-input">
-                            <input type="submit" value="Enviar" id="enviar">
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-primary">Enviar</button>
                         </div>
                     </form>
                 </article>
@@ -95,7 +95,7 @@
             <aside>
                 <div id="informacionContacto">
                     <h3>Información de Contacto</h3>
-                    <article>
+                    <article class="row">
                         <span class="info_contacto"><strong><i class="fa-solid fa-envelope"></i> Correo: </strong><a href="mailto:apapacho@gmail.com" target="_blank">apapacho@gmail.com</a></span>
                         <span class="info_contacto"><strong><i class="fa-brands fa-whatsapp"></i> Tel: </strong><a href="tel:+56 987654321" target="_blank">+56 987654321</a></span>
                         <span class="info_contacto"><strong><i class="fa-solid fa-house"></i> Dirección: </strong>General Lagos 1335, Valdivia, Chile</span>
@@ -105,8 +105,7 @@
                     </article>
                 </div>                
             </aside>
-        </div>
-        
+        </div>        
     </main>
     <footer>
         <div class="container">
