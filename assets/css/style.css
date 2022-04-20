@@ -164,6 +164,8 @@
         color:white;
     }
 
+    
+
 /* Slider */
     .slider_apa {
         width: 100%;
@@ -581,10 +583,11 @@
 
     .menu-fixed {
         position: fixed;
-        top: 0;
-        right: 0;
+        left: 5%;
+        top: 0.5rem;
+        right: 5%;
         z-index: 10;
-        width: 100%;
+        width: 90%;
         
     }
     .navbar>.container-fluid {
@@ -592,13 +595,14 @@
     }
 
     .principal-nav .navbar-toggler {
-        margin:10px 10px 0 0;
-        border: 0;
+        padding:0.5rem;
         background: white;
     }
 
     .principal-nav .navbar-nav {
         background: white;
+        height:90vh;
+        border: 1px rgba(0,0,0,0.3) groove;
     }
 }
 
@@ -606,6 +610,12 @@
 
     footer .container .row {
         flex-direction: column;
+    }
+
+    footer .atribucion {
+        --bs-gutter-x: 0;
+        justify-content: center;
+
     }
 
     header .main-header {
