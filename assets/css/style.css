@@ -75,10 +75,6 @@
         flex-direction: column;
     }
 
-    .centrado {
-        text-align: center;
-    }
-
     #productos_destacados_parent {
         clear: both;
         width: 100%;
@@ -189,6 +185,9 @@
     #slide1{        
         background-image: url(/assets/img/image1.jpg);
     }
+    #slide2{        
+        background-image: url(/assets/img/apapacho-46.png);
+    }
 
     .slider_apa .tela {
         background-color: rgba(0,0,0,0.5);
@@ -199,8 +198,8 @@
         justify-content: center;
         align-items: center;
         padding: 0 2rem;
-        text-align: center;
     }
+
     .slider_apa .tela .tela-margen {
         padding:1rem;
         margin: 1rem;
@@ -434,7 +433,6 @@
     display: inline-flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
     color: white;
     border-radius: 10px;
     margin-bottom: 1rem;
