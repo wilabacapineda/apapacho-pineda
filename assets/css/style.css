@@ -30,63 +30,24 @@
     }
 
     .paginas {
-        padding: 2rem;
-        display: flex;
-        justify-content: center;
-    }
-
-    .main-section {
         padding: 2rem 0rem;
-        max-width: 1140px;
     }
 
-    .main-section-group {
-        padding: 2rem;
-        display: grid;
-        grid-template-columns: auto 300px;
-        column-gap: 20px;
-        
+    .paginas>.row, footer>.row {
+        --bs-gutter-x: 0;
     }
 
     .texto_pagina {
         padding-bottom: 2rem;
     }
 
-    aside {
-        width: 300px;
-    }
-    
     section {
         max-width: 100%;
     }    
 
-    .main-section-group section {
-        max-width: 1140px;
-        min-width: 300px;
-    }
 
-    .paginas .main-section-group section {
-        max-width: 820px;
-        padding-bottom: 2rem;
-    }
-
-    .paginas .main-section-group aside article{
-        display: flex;
-        flex-direction: column;
-    }
-
-    #productos_destacados_parent {
-        clear: both;
-        width: 100%;
-        display: flex;
-        padding: 2rem 0;
-        justify-content: center;
-    }
-
-    #productos_destacados_child {
-        min-width: 300px;
-        max-width: 1140px;
-        padding: 2rem;
+    .padding-right {
+        padding-right: 1.5rem;
     }
 
     .boton {
@@ -97,6 +58,14 @@
         text-decoration: none;
     }
 
+    .shadow-bottom {
+        box-shadow: 0px 15px 10px -15px #6BA4B0;    
+    }
+
+    .aside-flex {
+        display: flex;
+        flex-direction: column;
+    }
 /* Header */
     header{
         text-align: center;
@@ -137,8 +106,6 @@
         grid-area: principal-nav;
         padding: 0;
     }
-
-
 
     .navbar>.container-fluid {
         padding:0;
@@ -187,6 +154,7 @@
     #slide1{        
         background-image: url(/assets/img/image1.jpg);
     }
+
     #slide2{        
         background-image: url(/assets/img/apapacho-46.png);
     }
@@ -241,7 +209,7 @@
         height: auto;
     }
     #instagram .tela #instagram_info {
-        width: 250px;
+        max-width: 250px;
         height: auto;
         padding: 0.5rem;        
         margin: 0.5rem;
@@ -256,7 +224,6 @@
         padding: 0.5rem;
         background: black;
         margin: 0.5rem;
-        display: flex;
         justify-content: center;
     }
 
@@ -264,8 +231,6 @@
         justify-content: center;
     }
 
-
-/* Siderbar */
 
 /* Footer */
     footer{
@@ -342,7 +307,6 @@
 
 
 /*Contact Form */
-
     
     .info_contacto {
         padding: 0.5rem 0;
@@ -350,43 +314,6 @@
 
     .info_contacto iframe {
         border-radius: 5px;
-    }
-
-    #contact-form {
-        max-width: 820px;
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        flex-direction: row;
-        padding: 2rem;
-    }
-
-    .contact-form-input{
-        display: flex;
-        flex-direction: column;
-        margin-bottom: 1.3rem;
-        width: 100%;
-    }
-
-    .contact-form-input label {
-        font-weight: bold;
-    }
-
-    .contact-form-input input, .contact-form-input textarea {
-        padding: 1rem;
-    }
-
-    #contact-form #enviar {
-        background: #46C8E3;
-        padding: 1rem 2rem;
-        color: white;
-        max-width: 10rem;
-        border-color: #6BA4B0;
-    }
-
-    #contact-form #contact-form-submit{
-        display: flex;
-        align-items: flex-end;
     }
 
 /* Tallas */
@@ -418,27 +345,20 @@
 }
 
 /* Encuentranos */
-#encuentranos {
-    padding: 0 2rem;
-}
 .empresas {
-    display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     align-items: flex-start;
-    flex-wrap: wrap;
     padding-bottom: 2rem;
 }
 .empresa {
     padding: 1rem 0;
     background: #B06B88;
-    display: inline-flex;
-    flex-direction: column;
     align-items: center;
     color: white;
     border-radius: 10px;
     margin-bottom: 1rem;
-
+    max-width: 300px;
 }
 
 .empresa_mapa, .empresa_info {
@@ -485,8 +405,8 @@
 
 
 /* Tienda */
-#productos_destacados_parent #productos_destacados_child .row {
-    justify-content: center;
+#productos_destacados {
+    padding: 2rem;
 }
 
 .producto{
@@ -528,8 +448,6 @@
 }
 
 .producto .producto_info .producto_info_precioCompra {
-    display: flex;
-    flex-direction: column;
     align-content: center;
     align-items: center;
 }
@@ -560,7 +478,7 @@
     text-decoration: none;
 }
 
-.opcionesFiltro li {
+.aside-flex li {
    list-style: none;
 }
 
@@ -583,11 +501,10 @@
 
     .menu-fixed {
         position: fixed;
-        left: 5%;
         top: 0.5rem;
         right: 5%;
         z-index: 10;
-        width: 90%;
+        width: 95%;
         
     }
     .navbar>.container-fluid {
@@ -615,7 +532,7 @@
     footer .atribucion {
         --bs-gutter-x: 0;
         justify-content: center;
-
+        text-align: center;
     }
 
     header .main-header {
@@ -625,17 +542,6 @@
         "logo"
         "descripcion";
     }   
-
-    .main-section-group {
-        grid-template-columns: auto;
-        column-gap: 0px;
-        padding: 0px;
-
-    }
-
-    .main-section-group aside {
-        display: none;
-    }
 
     footer .footer_logo, footer .footer_logo img, footer .footer_rrss, footer .footer_contacto {
         display: flex;
@@ -661,12 +567,31 @@
         flex-direction: column;
     }
 
-    .paginas .main-section-group section{
-        text-align: center;
+    #filtroProductos {
+        padding: 0 2rem;
     }
 
-    .paginas .main-section-group section h2, #productos_destacados_child h2{
-        text-align: center;
+    aside {
+        margin-top: 2rem!important;
     }
-          
+
+    .paginas .padding-right{
+        padding-right: 0;
+    }
+
+    .paginas article {
+        width: 90%;
+        margin: 0 auto;
+    }
+       
+}
+
+@media screen and (max-width:420px) {
+    header .logo {
+        flex-direction: column;
+    }
+
+    h2, h3   {
+        text-align: center;
+    }    
 }

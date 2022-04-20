@@ -13,7 +13,7 @@
 </head>
 <body>
     <div class="container-fluid homeGrid">    
-        <header>
+        <header class="shadow-bottom">
             <div class="row justify-content-md-center">
                 <!-- Titulo principal -->
                 <div class="logo animate__animated animate__zoomIn">
@@ -40,19 +40,7 @@
                                     <a href="./index.html" class="nav-link active" aria-current="page">Inicio</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="./pages/tienda.html" class="nav-link">Tienda</a>
-                                </li>
-                                <li class="nav-item">
                                     <a href="./pages/tallas.html" class="nav-link">Tallas</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="./pages/quienes-somos.html" class="nav-link">¿Quienes Somos?</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="./pages/encuentranos.html" class="nav-link">Encuéntranos</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="./pages/contacto.html" class="nav-link">Contacto</a>
                                 </li>
                                 <!--
                                     <li class="nav-item dropdown">
@@ -72,8 +60,8 @@
                 </nav>
             </div>
         </header>     
-        <main>
-            <section id="carouselExampleIndicators" class="carousel slide slider_apa" data-bs-ride="carousel">                
+        <main class="row">
+            <section id="carouselExampleIndicators" class="col-12 carousel slide slider_apa" data-bs-ride="carousel">                
                 <div class="carousel-indicators">
                   <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                   <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -103,9 +91,9 @@
                   <span class="visually-hidden">Next</span>
                 </button>
             </section>
-            <section id="productos_destacados_parent">
-                <div id="productos_destacados_child">
-                    <h2>Productos Destacados</h2>
+            <section id="productos_destacados" class="col-12">
+                <div>
+                    <h2 class="text-center">Productos Destacados</h2>
                     <div class="row">
                         <div id="producto_1" class="card mb-3 producto animate__animated animate__flipinX">
                             <div class="producto_imagen">
@@ -113,7 +101,7 @@
                             </div>
                             <div class="card-body producto_info text-center">
                                 <h5 class="card-title">Poleron Modelo "Amapola"</h5>
-                                <div class="producto_info_precioCompra">
+                                <div class="row producto_info_precioCompra">
                                     <p class="card-text producto_info_precioCompra_precio">
                                         Precio $15.000
                                     </p>
@@ -131,7 +119,7 @@
                             </div>
                             <div class="card-body producto_info text-center">
                                 <h5 class="card-title">Poleron Modelo "Amaranta"</h5>
-                                <div class="producto_info_precioCompra">
+                                <div class="row producto_info_precioCompra">
                                     <p class="card-text producto_info_precioCompra_precio">
                                         Precio $20.000
                                     </p>
@@ -149,7 +137,7 @@
                             </div>
                             <div class="card-body producto_info text-center">
                                 <h5 class="card-title">Poleron Modelo "Jacinto"</h5>
-                                <div class="producto_info_precioCompra">
+                                <div class="row producto_info_precioCompra">
                                     <p class="card-text producto_info_precioCompra_precio">
                                         Precio $10.000
                                     </p>
@@ -167,7 +155,7 @@
                             </div>
                             <div class="card-body producto_info text-center">
                                 <h5 class="card-title">Poleron Modelo "No me olvides"</h5>
-                                <div class="producto_info_precioCompra">
+                                <div class="row producto_info_precioCompra">
                                     <p class="card-text producto_info_precioCompra_precio">
                                         Precio $17.000
                                     </p>
@@ -185,7 +173,7 @@
                             </div>
                             <div class="card-body producto_info text-center">
                                 <h5 class="card-title">Poleron Modelo "Violeta"</h5>
-                                <div class="producto_info_precioCompra">
+                                <div class="row producto_info_precioCompra">
                                     <p class="card-text producto_info_precioCompra_precio">
                                         Precio $17.500
                                     </p>
@@ -200,7 +188,7 @@
                     </div>
                 </div>
             </section>
-            <section id="instagram">
+            <section id="instagram" class="col-12">
                 <div class="tela">
                     <div class="row">
                         <div id="instagram_info" class="card">
