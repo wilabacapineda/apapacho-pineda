@@ -176,15 +176,15 @@
     }
 
     #slide1{        
-        background-image: url(/assets/img/image1.jpg);
+        background-image: url(./../img/image1.jpg);
     }
 
     #slide2{        
-        background-image: url(/assets/img/apapacho-46.png);
+        background-image: url(./../img/apapacho-46.png);
     }
 
     #slide3{        
-        background-image: url(/assets/img/apapacho-24.JPG);
+        background-image: url(./../img/apapacho-24.JPG);
     }
  
 /* Instagram */
