@@ -5,13 +5,37 @@
     padding: 0;
 }
 
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+  
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+   
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888; 
+}
+  
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+
 /* Body */
     body{
         margin: 0;
         font-family: 'Fredoka', sans-serif;
         min-width: 300px;
         overflow-x: hidden;
+
+        
     }
+
+    
 
     main {
         grid-area: main;
@@ -67,14 +91,26 @@
     .aside-flex {
         display: flex;
         flex-direction: column;
+        background-color: white;  
+        z-index: 1;
+        overflow: hidden; 
+        box-shadow: none;
+        padding: 0; 
+
         li {
             list-style: none;
         }
+        &.collapse{
+            display: flex;
+        }
+    }
+
+    #filtroProductos .navbar-toggler {
+        display: none;
     }
 
 /* Header */
     header{
-        text-align: center;
 
         .logo {
             display: flex;
@@ -523,7 +559,7 @@
     h2, h3 {
         text-align: center;
     } 
-    
+
     header {
 
         .main-header {
@@ -578,11 +614,50 @@
         }
     }   
 
+    .tienda {
+        position: relative;
+        max-width: 90%;
+
+    }
+
     aside {
         margin-top: 2rem!important;
         
         &#filtroProductos {
-            padding: 0 2rem;
+            position: absolute;
+            top: 0;
+            left: 0;    
+            width: 95%;
+            max-width: 300px;
+            
+            
+            .navbar-toggler {
+                display: block;
+            }
+            .aside-flex {
+                background-color: white;  
+                z-index: 9;
+                overflow: hidden; 
+                box-shadow: rgba(0,0,0,0.5) 5px 5px 10px 1px;
+                padding: 1rem;  
+
+                &.collapse {
+                    display: none;
+                    height: 0px;      
+                }   
+
+                &.collapse.show {
+                    display: block;  
+                    height: 300px;
+                    
+                    &:hover {
+                        overflow-y: scroll;
+                    }             
+                }
+
+            }
+            
+            
         }
     }
 
