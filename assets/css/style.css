@@ -432,6 +432,11 @@
         padding: 2rem;
     }
 
+    .productos .row {
+        --bs-gutter-x: 0;
+        justify-content: center;
+    }
+
     .producto{
         opacity: 0.8;
         transition: all 0.5s ease 0s;
