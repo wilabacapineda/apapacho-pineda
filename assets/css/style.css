@@ -17,6 +17,10 @@
         grid-area: main;
     }
 
+    main.row {
+        --bs-gutter-x: 0;
+    }
+
     section {
         max-width: 100%;
     } 
