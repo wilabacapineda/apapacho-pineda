@@ -133,6 +133,18 @@
         color:white;
     }
 
+    button.collapsed .menu_cel:before {
+        content: "\f0c9" !important;
+    }
+
+    button .menu_cel:before {
+        content: "\f00d";
+    }
+
+    
+
+    
+
 
 /* Slider */
     .slider_apa {
