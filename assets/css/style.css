@@ -207,7 +207,7 @@
     #instagram{
         width: 100%;
         min-height: 500px;
-        background-image: url(/assets/img/image1.jpg);
+        background-image: url(./../img/image1.jpg);
         background-size: cover;
         background-attachment: fixed;
         background-repeat: no-repeat;
