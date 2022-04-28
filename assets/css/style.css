@@ -17,7 +17,7 @@
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #555; }
+  background: #888; }
 
 /* Body */
 body {
@@ -57,7 +57,7 @@ img {
 .boton {
   background: #B06B88;
   margin-top: 0.5rem;
-  color: white;
+  color: #fff;
   text-decoration: none; }
 
 .shadow-bottom {
@@ -66,7 +66,7 @@ img {
 .aside-flex {
   display: flex;
   flex-direction: column;
-  background-color: white;
+  background-color: #fff;
   z-index: 1;
   overflow: hidden;
   box-shadow: none;
@@ -113,15 +113,15 @@ header .principal-nav {
     padding-right: 1rem; }
     header .principal-nav .navbar-nav .nav-link:hover {
       background-color: #5A7E70;
-      color: white; }
+      color: #fff; }
     header .principal-nav .navbar-nav .nav-link.active {
       background-color: #6BA4B0;
-      color: white; }
+      color: #fff; }
   header .principal-nav .navbar-nav li a:link {
     color: black; }
   header .principal-nav .navbar-nav li a:active, header .principal-nav .navbar-nav li a:focus {
     background-color: #6BA4B0;
-    color: white; }
+    color: #fff; }
 
 /* Slider */
 .slider_apa {
@@ -139,7 +139,7 @@ header .principal-nav {
     .slider_apa .slide-div .tela {
       background-color: rgba(0, 0, 0, 0.5);
       height: 500px;
-      color: white;
+      color: #fff;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -199,7 +199,7 @@ header .principal-nav {
       background: #B06B88;
       padding: 0.5rem 1rem;
       margin-top: 0.5rem;
-      color: white;
+      color: #fff;
       text-decoration: none; }
     .producto .producto_comprar:hover {
       opacity: 1;
@@ -227,7 +227,7 @@ header .principal-nav {
   .instagram .tela {
     background-color: rgba(0, 0, 0, 0.7);
     min-height: 500px;
-    color: white;
+    color: #fff;
     padding: 2rem; }
     .instagram .tela .row {
       justify-content: center; }
@@ -254,7 +254,7 @@ header .principal-nav {
 footer {
   clear: both;
   background-color: #6BA4B0;
-  color: white;
+  color: #fff;
   min-height: 200px;
   grid-area: footer; }
   footer .container .row {
@@ -271,7 +271,7 @@ footer {
         padding: 0 0.5rem; }
       footer .container .row .footer_rrss .footer_rrss_icon a {
         font-size: 1.75rem;
-        color: white; }
+        color: #fff; }
         footer .container .row .footer_rrss .footer_rrss_icon a:visited {
           color: #ebebeb; }
         footer .container .row .footer_rrss .footer_rrss_icon a:hover {
@@ -283,7 +283,7 @@ footer {
       footer .container .row .footer_contacto h3 {
         margin-bottom: 0; }
       footer .container .row .footer_contacto a {
-        color: white;
+        color: #fff;
         text-decoration: none; }
         footer .container .row .footer_contacto a:hover {
           color: lightgray; }
@@ -313,7 +313,7 @@ footer {
       margin: 0; }
       .tabla_cat .tabla_overflow .tabla_tallas th {
         background-color: #B06B88;
-        color: white; }
+        color: #fff; }
   .tabla_cat .undertext_table {
     font-size: 0.85rem; }
 
@@ -327,7 +327,7 @@ footer {
     padding: 1rem 0;
     background: #B06B88;
     align-items: center;
-    color: white;
+    color: #fff;
     border-radius: 10px;
     margin-bottom: 1rem;
     max-width: 300px; }
@@ -354,7 +354,7 @@ footer {
         .empresas .empresa .empresa_info .empresa_rrss span {
           padding: 0 0.5rem; }
     .empresas .empresa a {
-      color: white; }
+      color: #fff; }
       .empresas .empresa a:visited {
         color: #ebebeb; }
       .empresas .empresa a:hover {
@@ -371,9 +371,9 @@ footer {
     justify-content: flex-end; }
   .principal-nav .navbar-toggler {
     padding: 0.5rem;
-    background: white; }
+    background: #fff; }
   .principal-nav .navbar-nav {
-    background: white;
+    background: #fff;
     height: 90vh;
     border: 1px rgba(0, 0, 0, 0.3) groove; } }
 
@@ -419,12 +419,12 @@ footer {
       position: absolute;
       top: 0;
       left: 0;
-      width: 95%;
+      width: 96%;
       max-width: 300px; }
       aside#filtroProductos .navbar-toggler {
         display: block; }
       aside#filtroProductos .aside-flex {
-        background-color: white;
+        background-color: #fff;
         z-index: 9;
         overflow: hidden;
         box-shadow: rgba(0, 0, 0, 0.5) 5px 5px 10px 1px;

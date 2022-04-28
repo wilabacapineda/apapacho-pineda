@@ -1,3 +1,20 @@
+$ancho_full:100%;
+$ancho_90:90%;
+$ancho_96:96%;
+$right_96: (100% - $ancho_96)/2;
+$ancho_media: 300px;
+$ancho_max_imagen: 150px;
+$ancho_max_elemento: 250px;
+$alto_section: 500px; 
+
+$scrollbar-track_color: #f1f1f1;
+$scrollbar-thumb_color: #888;
+$scrollbar-thumb-hover_color: #888;
+$celeste: #6BA4B0;
+$violeta: #B06B88;
+$blanco: #fff;
+$verde: #5A7E70;
+
 @import url('https://fonts.googleapis.com/css2?family=Fredoka&display=swap');
 
 * {
@@ -12,30 +29,28 @@
   
 /* Track */
 ::-webkit-scrollbar-track {
-    background: #f1f1f1; 
+    background: $scrollbar-track_color; 
 }
    
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: #888; 
+    background: $scrollbar-thumb_color; 
 }
   
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-    background: #555; 
+    background: $scrollbar-thumb-hover_color; 
 }
 
 /* Body */
     body{
         margin: 0;
         font-family: 'Fredoka', sans-serif;
-        min-width: 300px;
+        min-width: $ancho_media;
         overflow-x: hidden;
 
         
-    }
-
-    
+    }   
 
     main {
         grid-area: main;
@@ -46,11 +61,11 @@
     }
 
     section {
-        max-width: 100%;
+        max-width: $ancho_full;
     } 
 
     img {
-        width: 100%;
+        width: $ancho_full;
     }
 
     .homeGrid {
@@ -78,20 +93,20 @@
     }
 
     .boton {
-        background: #B06B88;
+        background: $violeta;
         margin-top: 0.5rem;
-        color:white;
+        color:$blanco;
         text-decoration: none;
     }
 
     .shadow-bottom {
-        box-shadow: 0px 15px 10px -15px #6BA4B0;    
+        box-shadow: 0px 15px 10px -15px $celeste;    
     }
 
     .aside-flex {
         display: flex;
         flex-direction: column;
-        background-color: white;  
+        background-color: $blanco;  
         z-index: 1;
         overflow: hidden; 
         box-shadow: none;
@@ -121,7 +136,7 @@
             grid-area: logo;
             
             .logo-img {
-                max-width: 150px;
+                max-width: $ancho_max_imagen;
     
                 img {
                     border: 0;
@@ -161,13 +176,13 @@
                     padding-right: 1rem;
     
                     &:hover {
-                        background-color: #5A7E70;
-                        color:white;
+                        background-color: $verde;
+                        color:$blanco;
                     }
     
                     &.active{
-                        background-color: #6BA4B0;
-                        color:white;
+                        background-color: $celeste;
+                        color:$blanco;
                     }
                 }
     
@@ -178,8 +193,8 @@
                         color: black;
                     }
                     &:active,&:focus {
-                        background-color: #6BA4B0;
-                        color:white;
+                        background-color: $celeste;
+                        color:$blanco;
                     }
                 }
             }   
@@ -188,23 +203,23 @@
 
 /* Slider */
     .slider_apa {
-        width: 100%;
-        height: 500px;
+        width: $ancho_full;
+        height: $alto_section;
         position: relative;
 
         .slide-div {
-            width: 100%;
+            width: $ancho_full;
             height: 100%;
             background-size: cover;
             background-attachment: fixed;
             background-repeat: no-repeat;
             background-position: top center;
-            background-color: #6BA4B0;
+            background-color: $celeste;
 
             .tela {
                 background-color: rgba(0,0,0,0.5);
-                height: 500px;
-                color: white;
+                height: $alto_section;
+                color: $blanco;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
@@ -236,7 +251,7 @@
         opacity: 0.8;
         transition: all 0.5s ease 0s;
         border:0;
-        max-width: 250px;
+        max-width: $ancho_max_elemento;
         &:hover {
             opacity: 1;
             transform: scale(1.2);
@@ -250,7 +265,7 @@
         }
 
         img {
-            max-width: 250px;
+            max-width: $ancho_max_elemento;
         }
 
         .producto_info{
@@ -273,7 +288,7 @@
             position: absolute;
             top: 0;
             left: 0;
-            width: 100%;    
+            width: $ancho_full;    
             height: 100%;
             display: flex;
             align-items: center;
@@ -281,10 +296,10 @@
             opacity: 0;
 
             .producto_comprar_btn {
-                background: #B06B88;
+                background: $violeta;
                 padding: 0.5rem 1rem;
                 margin-top: 0.5rem;
-                color:white;
+                color:$blanco;
                 text-decoration: none;
             }
 
@@ -311,8 +326,8 @@
 
 /* Instagram */
     .instagram {
-        width: 100%;
-        min-height: 500px;
+        width: $ancho_full;
+        min-height: $alto_section;
         background-image: url(./../img/image1.jpg);
         background-size: cover;
         background-attachment: fixed;
@@ -321,15 +336,15 @@
 
         .tela {
             background-color: rgba(0,0,0,0.7);
-            min-height: 500px;
-            color: white;
+            min-height: $alto_section;
+            color: $blanco;
             padding: 2rem;
 
             .row {
                 justify-content: center;
 
                 .instagram_info {
-                    max-width: 250px;
+                    max-width: $ancho_max_elemento;
                     height: auto;
                     padding: 0.5rem;        
                     margin: 0.5rem;
@@ -340,14 +355,14 @@
                 }
 
                 .instagram_img {
-                    max-width: 250px;
+                    max-width: $ancho_max_elemento;
                     padding: 0.5rem;
                     background: black;
                     margin: 0.5rem;
                     justify-content: center;
 
                     img{
-                        max-width: 250px;
+                        max-width: $ancho_max_elemento;
                         height: auto;
                     }
                 }
@@ -358,8 +373,8 @@
 /* Footer */
     footer{
         clear: both;
-        background-color: #6BA4B0;
-        color: white;
+        background-color: $celeste;
+        color: $blanco;
         min-height: 200px;
         grid-area: footer;
 
@@ -371,7 +386,7 @@
                 padding: 2rem 0;
                 img {
                     padding: 1rem;
-                    max-width: 300px;
+                    max-width: $ancho_media;
                 }
             }
     
@@ -383,7 +398,7 @@
     
                 .footer_rrss_icon a {
                     font-size: 1.75rem;
-                    color: white;
+                    color: $blanco;
     
                     &:visited {
                         color:rgb(235, 235, 235);
@@ -409,7 +424,7 @@
                 }
     
                 a {
-                    color:white;
+                    color:$blanco;
                     text-decoration: none;
     
                     &:hover{
@@ -440,11 +455,11 @@
         padding-bottom: 2rem;
         display: grid;
         justify-content: center;
-        grid-template-columns: 90%;
+        grid-template-columns: $ancho_90;
 
         .tabla_overflow {
             overflow: auto;
-            max-height: 500px;    
+            max-height: $alto_section;    
 
             .tabla_tallas {
                 border-color: black;
@@ -452,8 +467,8 @@
                 margin: 0;
 
                 th {
-                    background-color: #B06B88;
-                    color: white;
+                    background-color: $violeta;
+                    color: $blanco;
                 }
             }
         }
@@ -473,18 +488,18 @@
 
         .empresa {
             padding: 1rem 0;
-            background: #B06B88;
+            background: $violeta;
             align-items: center;
-            color: white;
+            color: $blanco;
             border-radius: 10px;
             margin-bottom: 1rem;
-            max-width: 300px;
+            max-width: $ancho_media;
 
             .empresa_mapa {
                 display: flex;
                 flex-direction: column;
                 flex-wrap: nowrap;
-                width: 90%;
+                width: $ancho_90;
     
                 .empresa_mapa iframe {
                     border-radius: 5px;
@@ -495,7 +510,7 @@
                 display: flex;
                 flex-direction: column;
                 flex-wrap: nowrap;
-                width: 90%;
+                width: $ancho_90;
                 font-size: 0.90rem;
     
                 .empresa_direccion {
@@ -515,12 +530,12 @@
             }
 
             a {
-                color: white;
+                color: $blanco;
                 &:visited {
                     color: rgb(235, 235, 235);
                 }
                 &:hover {
-                    color: #6BA4B0;
+                    color: $celeste;
                 }
             }
         }        
@@ -531,9 +546,9 @@
     .menu-fixed {
         position: fixed;
         top: 0.5rem;
-        right: 2%;
+        right: $right_96;
         z-index: 10;
-        width: 96%;
+        width: $ancho_96;
         
     }
 
@@ -543,10 +558,10 @@
         }
         .navbar-toggler {
             padding:0.5rem;
-            background: white;
+            background: $blanco;
         }
         .navbar-nav {
-            background: white;
+            background: $blanco;
             height:90vh;
             border: 1px rgba(0,0,0,0.3) groove;
         }
@@ -616,7 +631,7 @@
 
     .tienda {
         position: relative;
-        max-width: 90%;
+        max-width: $ancho_90;
 
     }
 
@@ -627,15 +642,15 @@
             position: absolute;
             top: 0;
             left: 0;    
-            width: 95%;
-            max-width: 300px;
+            width: $ancho_96;
+            max-width: $ancho_media;
             
             
             .navbar-toggler {
                 display: block;
             }
             .aside-flex {
-                background-color: white;  
+                background-color: $blanco;  
                 z-index: 9;
                 overflow: hidden; 
                 box-shadow: rgba(0,0,0,0.5) 5px 5px 10px 1px;
@@ -648,7 +663,7 @@
 
                 &.collapse.show {
                     display: block;  
-                    height: 300px;
+                    height: $ancho_media;
                     
                     &:hover {
                         overflow-y: scroll;
@@ -662,7 +677,7 @@
     }
 
     .paginas article {
-        width: 90%;
+        width: $ancho_90;
         margin: 0 auto;
     }       
 }
