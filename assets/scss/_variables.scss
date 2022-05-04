@@ -1,0 +1,30 @@
+$alto_section: 500px; 
+$celeste: #6BA4B0;
+$violeta: #B06B88;
+$blanco: #fff;
+$verde: #5A7E70;
+
+$anchos:(
+    media:300px,
+    logo-img:150px,
+    max-item:250px,
+    ancho_full:100%,    
+    96:96%,
+    90:90%,    
+);
+$right_96: (100% - map-get($map: $anchos, $key: 96))/2;
+
+$scrollbar_colors: (
+    track:#f1f1f1,
+    thumb:#888,
+    thumb-hover:#888,
+);
+
+$slides: (
+    1:url(./../img/image1.jpg),
+    2:url(./../img/apapacho-46.png),
+    3:url(./../img/apapacho-24.JPG),
+);
+
+
+

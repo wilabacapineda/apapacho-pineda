@@ -1,27 +1,23 @@
-$ancho_full:100%;
-$ancho_90:90%;
-$ancho_96:96%;
-$right_96: (100% - $ancho_96)/2;
-$ancho_media: 300px;
-$ancho_max_imagen: 150px;
-$ancho_max_elemento: 250px;
-$alto_section: 500px; 
-
-$scrollbar-track_color: #f1f1f1;
-$scrollbar-thumb_color: #888;
-$scrollbar-thumb-hover_color: #888;
-$celeste: #6BA4B0;
-$violeta: #B06B88;
-$blanco: #fff;
-$verde: #5A7E70;
+@import "variables";
 
 @import url('https://fonts.googleapis.com/css2?family=Fredoka&display=swap');
 
-* {
-    margin: 0;
-    padding: 0;
+@mixin margin-pad($margen,$pad) {
+    @if($margen=="cero"){
+        padding: $pad;    
+    } @else if ($pad=="cero") {
+        margin: $margen; 
+    } @else {
+        margin: $margen;
+        padding: $pad;
+    }
 }
 
+* {
+    @include margin-pad(0,0);
+ 
+}
+    
 /* width */
 ::-webkit-scrollbar {
     width: 10px;
@@ -29,27 +25,25 @@ $verde: #5A7E70;
   
 /* Track */
 ::-webkit-scrollbar-track {
-    background: $scrollbar-track_color; 
+    background: map-get($map: $scrollbar_colors , $key: track); 
 }
    
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: $scrollbar-thumb_color; 
+    background: map-get($map: $scrollbar_colors , $key: thumb); 
 }
   
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-    background: $scrollbar-thumb-hover_color; 
+    background: map-get($map: $scrollbar_colors , $key: thumb-hover);
 }
 
 /* Body */
     body{
         margin: 0;
         font-family: 'Fredoka', sans-serif;
-        min-width: $ancho_media;
-        overflow-x: hidden;
-
-        
+        min-width: map-get($map: $anchos, $key: media);
+        overflow-x: hidden;        
     }   
 
     main {
@@ -57,15 +51,15 @@ $verde: #5A7E70;
     }
 
     main.row {
-        --bs-gutter-x: 0;
+        @extend .bs_gutter-x-0;
     }
 
     section {
-        max-width: $ancho_full;
+        max-width: map-get($map: $anchos, $key: ancho_full);
     } 
 
     img {
-        width: $ancho_full;
+        width: map-get($map: $anchos, $key: ancho_full);
     }
 
     .homeGrid {
@@ -77,7 +71,7 @@ $verde: #5A7E70;
     }
 
     .pad-2 {
-        padding: 2rem;
+        @include margin-pad("cero",2rem);
     }
 
     .pad-bottom-2 {
@@ -110,7 +104,7 @@ $verde: #5A7E70;
         z-index: 1;
         overflow: hidden; 
         box-shadow: none;
-        padding: 0; 
+        @include margin-pad("cero",0);
 
         li {
             list-style: none;
@@ -136,7 +130,7 @@ $verde: #5A7E70;
             grid-area: logo;
             
             .logo-img {
-                max-width: $ancho_max_imagen;
+                max-width: map-get($map: $anchos, $key: logo-img);
     
                 img {
                     border: 0;
@@ -155,7 +149,7 @@ $verde: #5A7E70;
 
         .principal-nav{
             grid-area: principal-nav;
-            padding: 0;
+            @include margin-pad("cero",0);
             button {
                 &.collapsed .menu_cel:before {
                     content: "\f0c9" !important;
@@ -166,7 +160,7 @@ $verde: #5A7E70;
             } 
     
             & >.container-fluid {
-                padding:0;
+                @include margin-pad("cero",0);
             }
     
             .navbar-nav {
@@ -203,17 +197,13 @@ $verde: #5A7E70;
 
 /* Slider */
     .slider_apa {
-        width: $ancho_full;
+        width: map-get($map: $anchos, $key: ancho_full);
         height: $alto_section;
         position: relative;
 
         .slide-div {
-            width: $ancho_full;
-            height: 100%;
-            background-size: cover;
-            background-attachment: fixed;
-            background-repeat: no-repeat;
-            background-position: top center;
+            @extend .background-style;            
+            height: 100%;            
             background-color: $celeste;
 
             .tela {
@@ -224,26 +214,20 @@ $verde: #5A7E70;
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
-                padding: 0 2rem;
+                @include margin-pad("cero",0 2rem);
             }
         }
     }    
 
-    #slide1{        
-        background-image: url(./../img/image1.jpg);
-    }
-
-    #slide2{        
-        background-image: url(./../img/apapacho-46.png);
-    }
-
-    #slide3{        
-        background-image: url(./../img/apapacho-24.JPG);
+    @each $i,$img in $slides {
+        #slide#{$i}{
+            background-image:#{$img};
+        }
     }
 
 /* Tienda */
     .productos .row {
-        --bs-gutter-x: 0;
+        @extend .bs_gutter-x-0;
         justify-content: center;
     }
 
@@ -251,7 +235,7 @@ $verde: #5A7E70;
         opacity: 0.8;
         transition: all 0.5s ease 0s;
         border:0;
-        max-width: $ancho_max_elemento;
+        max-width: map-get($map: $anchos, $key: max-item);
         &:hover {
             opacity: 1;
             transform: scale(1.2);
@@ -265,7 +249,7 @@ $verde: #5A7E70;
         }
 
         img {
-            max-width: $ancho_max_elemento;
+            max-width: map-get($map: $anchos, $key: max-item);
         }
 
         .producto_info{
@@ -288,7 +272,7 @@ $verde: #5A7E70;
             position: absolute;
             top: 0;
             left: 0;
-            width: $ancho_full;    
+            width: map-get($map: $anchos, $key: ancho_full);    
             height: 100%;
             display: flex;
             align-items: center;
@@ -297,7 +281,7 @@ $verde: #5A7E70;
 
             .producto_comprar_btn {
                 background: $violeta;
-                padding: 0.5rem 1rem;
+                @include margin-pad("cero",0.5rem 1rem);
                 margin-top: 0.5rem;
                 color:$blanco;
                 text-decoration: none;
@@ -325,29 +309,33 @@ $verde: #5A7E70;
     }    
 
 /* Instagram */
-    .instagram {
-        width: $ancho_full;
-        min-height: $alto_section;
-        background-image: url(./../img/image1.jpg);
+    .background-style {
         background-size: cover;
         background-attachment: fixed;
         background-repeat: no-repeat;
         background-position: top center;
+        width: map-get($map: $anchos, $key: ancho_full);
+    }
+
+    .instagram {
+        @extend .background-style;
+        min-height: $alto_section;
+        background-image: url(./../img/image1.jpg);
+
 
         .tela {
             background-color: rgba(0,0,0,0.7);
             min-height: $alto_section;
             color: $blanco;
-            padding: 2rem;
+            @include margin-pad("cero",2rem);
 
             .row {
                 justify-content: center;
 
                 .instagram_info {
-                    max-width: $ancho_max_elemento;
+                    max-width: map-get($map: $anchos, $key: max-item);
                     height: auto;
-                    padding: 0.5rem;        
-                    margin: 0.5rem;
+                    @include margin-pad(0.5rem,0.5rem);
                     background: transparent;
                     display: flex;
                     align-items: center;
@@ -355,14 +343,13 @@ $verde: #5A7E70;
                 }
 
                 .instagram_img {
-                    max-width: $ancho_max_elemento;
-                    padding: 0.5rem;
+                    max-width: map-get($map: $anchos, $key: max-item);
+                    @include margin-pad(0.5rem,0.5rem);
                     background: black;
-                    margin: 0.5rem;
                     justify-content: center;
 
                     img{
-                        max-width: $ancho_max_elemento;
+                        max-width: map-get($map: $anchos, $key: max-item);
                         height: auto;
                     }
                 }
@@ -383,17 +370,17 @@ $verde: #5A7E70;
 
             .footer_logo {
                 grid-area: footer_logo;
-                padding: 2rem 0;
+                @include margin-pad("cero",2rem 0);
                 img {
-                    padding: 1rem;
-                    max-width: $ancho_media;
+                    @include margin-pad("cero",1rem);
+                    max-width: map-get($map: $anchos, $key: media);
                 }
             }
     
             .footer_rrss {
-                padding: 2rem 0;
+                @include margin-pad("cero",2rem 0);
                 span {
-                    padding: 0 0.5rem;
+                    @include margin-pad("cero",0 0.5rem);
                 }
     
                 .footer_rrss_icon a {
@@ -413,7 +400,7 @@ $verde: #5A7E70;
             }
     
             .footer_contacto {
-                padding: 2rem 0;               
+                @include margin-pad("cero",2rem 0);              
     
                 .row {
                     padding-bottom: 1rem;
@@ -437,14 +424,14 @@ $verde: #5A7E70;
         .atribucion {
             background-color: goldenrod;
             color:black;
-            padding: 0.5rem 0;
+            @include margin-pad("cero",0.5rem 0);
         }
 
     }
 
 /*Contact Form */    
     .info_contacto {
-        padding: 0.5rem 0;
+        @include margin-pad("cero",0.5rem 0);
         iframe {
             border-radius: 5px;
         }
@@ -455,7 +442,7 @@ $verde: #5A7E70;
         padding-bottom: 2rem;
         display: grid;
         justify-content: center;
-        grid-template-columns: $ancho_90;
+        grid-template-columns: map-get($map: $anchos, $key: 90);
 
         .tabla_overflow {
             overflow: auto;
@@ -487,19 +474,19 @@ $verde: #5A7E70;
         padding-bottom: 2rem;
 
         .empresa {
-            padding: 1rem 0;
+            @include margin-pad("cero",1rem 0);
             background: $violeta;
             align-items: center;
             color: $blanco;
             border-radius: 10px;
             margin-bottom: 1rem;
-            max-width: $ancho_media;
+            max-width: map-get($map: $anchos, $key: media);
 
             .empresa_mapa {
                 display: flex;
                 flex-direction: column;
                 flex-wrap: nowrap;
-                width: $ancho_90;
+                width: map-get($map: $anchos, $key: 90);
     
                 .empresa_mapa iframe {
                     border-radius: 5px;
@@ -510,7 +497,7 @@ $verde: #5A7E70;
                 display: flex;
                 flex-direction: column;
                 flex-wrap: nowrap;
-                width: $ancho_90;
+                width: map-get($map: $anchos, $key: 90);
                 font-size: 0.90rem;
     
                 .empresa_direccion {
@@ -524,7 +511,7 @@ $verde: #5A7E70;
                     font-size: 1.3rem;
     
                     span {
-                        padding: 0 0.5rem;
+                        @include margin-pad("cero",0 0.5rem);
                     }
                 }
             }
@@ -548,7 +535,7 @@ $verde: #5A7E70;
         top: 0.5rem;
         right: $right_96;
         z-index: 10;
-        width: $ancho_96;
+        width: map-get($map: $anchos, $key: 96);
         
     }
 
@@ -557,7 +544,7 @@ $verde: #5A7E70;
             justify-content: flex-end;
         }
         .navbar-toggler {
-            padding:0.5rem;
+            @include margin-pad("cero",0.5rem);
             background: $blanco;
         }
         .navbar-nav {
@@ -570,6 +557,12 @@ $verde: #5A7E70;
 }
 
 @media screen and (max-width:768px) {
+    
+    .flex_options {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
 
     h2, h3 {
         text-align: center;
@@ -578,7 +571,7 @@ $verde: #5A7E70;
     header {
 
         .main-header {
-            padding: 1rem 1rem 0;
+            @include margin-pad("cero",1rem 1rem 0);
             display: grid;
             grid-template-areas: 
             "logo"
@@ -592,27 +585,19 @@ $verde: #5A7E70;
             flex-direction: column;
 
             .footer_logo {
-                display: flex;
-                justify-content: center;
-                flex-wrap: wrap;
+                @extend .flex_options;
                 img {
-                    display: flex;
-                    justify-content: center;
-                    flex-wrap: wrap;
+                    @extend .flex_options;                    
                 }
             }
 
             .footer_rrss{
-                display: flex;
-                justify-content: center;
-                flex-wrap: wrap;
+                @extend .flex_options;
                 flex-direction: column;
             }
 
             .footer_contacto {
-                display: flex;
-                justify-content: center;
-                flex-wrap: wrap;
+                @extend .flex_options;
                 flex-direction: column;
 
                 span {
@@ -631,7 +616,7 @@ $verde: #5A7E70;
 
     .tienda {
         position: relative;
-        max-width: $ancho_90;
+        max-width: map-get($map: $anchos, $key: 90);
 
     }
 
@@ -642,8 +627,8 @@ $verde: #5A7E70;
             position: absolute;
             top: 0;
             left: 0;    
-            width: $ancho_96;
-            max-width: $ancho_media;
+            width: map-get($map: $anchos, $key: 96);
+            max-width: map-get($map: $anchos, $key: media);
             
             
             .navbar-toggler {
@@ -654,8 +639,7 @@ $verde: #5A7E70;
                 z-index: 9;
                 overflow: hidden; 
                 box-shadow: rgba(0,0,0,0.5) 5px 5px 10px 1px;
-                padding: 1rem;  
-
+                @include margin-pad("cero",1rem);
                 &.collapse {
                     display: none;
                     height: 0px;      
@@ -663,7 +647,7 @@ $verde: #5A7E70;
 
                 &.collapse.show {
                     display: block;  
-                    height: $ancho_media;
+                    height: map-get($map: $anchos, $key: media);
                     
                     &:hover {
                         overflow-y: scroll;
@@ -677,7 +661,7 @@ $verde: #5A7E70;
     }
 
     .paginas article {
-        width: $ancho_90;
+        width: map-get($map: $anchos, $key: 90);
         margin: 0 auto;
     }       
 }

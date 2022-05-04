@@ -29,9 +29,6 @@ body {
 main {
   grid-area: main; }
 
-main.row {
-  --bs-gutter-x: 0; }
-
 section {
   max-width: 100%; }
 
@@ -51,7 +48,7 @@ img {
 .pad-right-1p5 {
   padding-right: 1.5rem; }
 
-.bs_gutter-x-0 {
+.bs_gutter-x-0, main.row, .productos .row {
   --bs-gutter-x: 0; }
 
 .boton {
@@ -129,12 +126,7 @@ header .principal-nav {
   height: 500px;
   position: relative; }
   .slider_apa .slide-div {
-    width: 100%;
     height: 100%;
-    background-size: cover;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-position: top center;
     background-color: #6BA4B0; }
     .slider_apa .slide-div .tela {
       background-color: rgba(0, 0, 0, 0.5);
@@ -157,7 +149,6 @@ header .principal-nav {
 
 /* Tienda */
 .productos .row {
-  --bs-gutter-x: 0;
   justify-content: center; }
 
 .producto {
@@ -216,14 +207,16 @@ header .principal-nav {
     display: inline-flex; }
 
 /* Instagram */
-.instagram {
-  width: 100%;
-  min-height: 500px;
-  background-image: url(./../img/image1.jpg);
+.background-style, .slider_apa .slide-div, .instagram {
   background-size: cover;
   background-attachment: fixed;
   background-repeat: no-repeat;
-  background-position: top center; }
+  background-position: top center;
+  width: 100%; }
+
+.instagram {
+  min-height: 500px;
+  background-image: url(./../img/image1.jpg); }
   .instagram .tela {
     background-color: rgba(0, 0, 0, 0.7);
     min-height: 500px;
@@ -234,17 +227,17 @@ header .principal-nav {
       .instagram .tela .row .instagram_info {
         max-width: 250px;
         height: auto;
-        padding: 0.5rem;
         margin: 0.5rem;
+        padding: 0.5rem;
         background: transparent;
         display: flex;
         align-items: center;
         justify-content: center; }
       .instagram .tela .row .instagram_img {
         max-width: 250px;
+        margin: 0.5rem;
         padding: 0.5rem;
         background: black;
-        margin: 0.5rem;
         justify-content: center; }
         .instagram .tela .row .instagram_img img {
           max-width: 250px;
@@ -378,6 +371,10 @@ footer {
     border: 1px rgba(0, 0, 0, 0.3) groove; } }
 
 @media screen and (max-width: 768px) {
+  .flex_options, footer .container .row .footer_logo, footer .container .row .footer_logo img, footer .container .row .footer_rrss, footer .container .row .footer_contacto {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; }
   h2, h3 {
     text-align: center; }
   header .main-header {
@@ -386,23 +383,9 @@ footer {
     grid-template-areas: "logo" "descripcion"; }
   footer .container .row {
     flex-direction: column; }
-    footer .container .row .footer_logo {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap; }
-      footer .container .row .footer_logo img {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap; }
     footer .container .row .footer_rrss {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
       flex-direction: column; }
     footer .container .row .footer_contacto {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
       flex-direction: column; }
       footer .container .row .footer_contacto span {
         margin-bottom: 1rem; }
