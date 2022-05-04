@@ -661,7 +661,7 @@
     }
 
     .paginas article {
-        width: map-get($map: $anchos, $key: 90);
+        width: map-get($map: $anchos, $key: ancho_full);
         margin: 0 auto;
     }       
 }
@@ -670,6 +670,8 @@
     header .logo {
         flex-direction: column;
     }
-
+    .paginas article {
+        max-width: map-get($map: $anchos, $key: media);
+    }  
        
 }

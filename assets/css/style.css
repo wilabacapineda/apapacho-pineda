@@ -421,9 +421,11 @@ footer {
           aside#filtroProductos .aside-flex.collapse.show:hover {
             overflow-y: scroll; }
   .paginas article {
-    width: 90%;
+    width: 100%;
     margin: 0 auto; } }
 
 @media screen and (max-width: 420px) {
   header .logo {
-    flex-direction: column; } }
+    flex-direction: column; }
+  .paginas article {
+    max-width: 300px; } }
