@@ -17,7 +17,11 @@
     @include margin-pad(0,0);
  
 }
-    
+
+a:hover {
+    color:$color_fondo-hover;    
+}
+
 /* width */
 ::-webkit-scrollbar {
     width: 10px;
@@ -87,20 +91,20 @@
     }
 
     .boton {
-        background: $violeta;
+        background: $color_fondo-boton;
         margin-top: 0.5rem;
-        color:$blanco;
+        color:$color_texto-a!important;
         text-decoration: none;
     }
 
     .shadow-bottom {
-        box-shadow: 0px 15px 10px -15px $celeste;    
+        box-shadow: 0px 15px 10px -15px;
     }
 
     .aside-flex {
         display: flex;
         flex-direction: column;
-        background-color: $blanco;  
+        background-color: $color_fondo;  
         z-index: 1;
         overflow: hidden; 
         box-shadow: none;
@@ -170,13 +174,13 @@
                     padding-right: 1rem;
     
                     &:hover {
-                        background-color: $verde;
-                        color:$blanco;
+                        background-color: $color_fondo-hover;
+                        color:$color_texto-a;
                     }
     
                     &.active{
-                        background-color: $celeste;
-                        color:$blanco;
+                        background-color: $color_texto-hover_active;
+                        color:$color_texto-a;
                     }
                 }
     
@@ -187,8 +191,8 @@
                         color: black;
                     }
                     &:active,&:focus {
-                        background-color: $celeste;
-                        color:$blanco;
+                        background-color: $color_texto-hover_active;
+                        color:$color_texto-a;
                     }
                 }
             }   
@@ -204,12 +208,12 @@
         .slide-div {
             @extend .background-style;            
             height: 100%;            
-            background-color: $celeste;
+            background-color: $color_fondo-widget;
 
             .tela {
-                background-color: rgba(0,0,0,0.5);
+                background-color: $color_fondo-tela;
                 height: $alto_section;
-                color: $blanco;
+                color: $color_texto_cards;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
@@ -280,10 +284,10 @@
             opacity: 0;
 
             .producto_comprar_btn {
-                background: $violeta;
+                background: $color_fondo-boton;
                 @include margin-pad("cero",0.5rem 1rem);
                 margin-top: 0.5rem;
-                color:$blanco;
+                color:$color_texto-a;
                 text-decoration: none;
             }
 
@@ -324,9 +328,9 @@
 
 
         .tela {
-            background-color: rgba(0,0,0,0.7);
+            background-color:$color_fondo-tela_dark;
             min-height: $alto_section;
-            color: $blanco;
+            color: $color_texto_cards;
             @include margin-pad("cero",2rem);
 
             .row {
@@ -360,8 +364,8 @@
 /* Footer */
     footer{
         clear: both;
-        background-color: $celeste;
-        color: $blanco;
+        background-color: $color_fondo-widget;
+        color: $color_texto_cards;
         min-height: 200px;
         grid-area: footer;
 
@@ -385,10 +389,10 @@
     
                 .footer_rrss_icon a {
                     font-size: 1.75rem;
-                    color: $blanco;
+                    color: $color_texto-a;
     
                     &:visited {
-                        color:rgb(235, 235, 235);
+                        color:$color_texto-a_visited;
                     }
     
                     &:hover {
@@ -411,7 +415,7 @@
                 }
     
                 a {
-                    color:$blanco;
+                    color:$color_texto-a;
                     text-decoration: none;
     
                     &:hover{
@@ -454,8 +458,8 @@
                 margin: 0;
 
                 th {
-                    background-color: $violeta;
-                    color: $blanco;
+                    background-color: $color_fondo-cards;
+                    color: $color_texto_cards;
                 }
             }
         }
@@ -475,9 +479,9 @@
 
         .empresa {
             @include margin-pad("cero",1rem 0);
-            background: $violeta;
+            background: $color_fondo-cards;
             align-items: center;
-            color: $blanco;
+            color: $color_texto_cards;
             border-radius: 10px;
             margin-bottom: 1rem;
             max-width: map-get($map: $anchos, $key: media);
@@ -517,12 +521,12 @@
             }
 
             a {
-                color: $blanco;
+                color: $color_texto-a;
                 &:visited {
-                    color: rgb(235, 235, 235);
+                    color: $color_texto-a_visited;
                 }
                 &:hover {
-                    color: $celeste;
+                    color: $color_texto-hover_active;
                 }
             }
         }        
@@ -545,12 +549,12 @@
         }
         .navbar-toggler {
             @include margin-pad("cero",0.5rem);
-            background: $blanco;
+            background: $color_fondo;
         }
         .navbar-nav {
-            background: $blanco;
+            background: $color_fondo;
             height:90vh;
-            border: 1px rgba(0,0,0,0.3) groove;
+            border: 1px $color_fondo-tela_light groove;
         }
     
     }
@@ -635,10 +639,10 @@
                 display: block;
             }
             .aside-flex {
-                background-color: $blanco;  
+                background-color: $color_fondo;  
                 z-index: 9;
                 overflow: hidden; 
-                box-shadow: rgba(0,0,0,0.5) 5px 5px 10px 1px;
+                box-shadow: $color_fondo-tela 5px 5px 10px 1px;
                 @include margin-pad("cero",1rem);
                 &.collapse {
                     display: none;

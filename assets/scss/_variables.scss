@@ -1,8 +1,19 @@
 $alto_section: 500px; 
-$celeste: #6BA4B0;
-$violeta: #B06B88;
-$blanco: #fff;
-$verde: #5A7E70;
+
+$color_texto_primario:#000;
+$color_texto-hover_active:#6BA4B0;
+$color_texto-cards:#fff;
+$color_texto-a:#fff;
+$color_texto-a_visited:rgb(235, 235, 235);
+
+$color_fondo:#fff;
+$color_fondo-hover:#5A7E70;
+$color_fondo-boton:#B06B88;
+$color_fondo-cards:#B06B88;
+$color_fondo-widget:#6BA4B0;
+$color_fondo-tela:rgba(0,0,0,0.5);
+$color_fondo-tela_dark:rgba(0,0,0,0.7);
+$color_fondo-tela_light:rgba(0,0,0,0.7);
 
 $anchos:(
     media:300px,
