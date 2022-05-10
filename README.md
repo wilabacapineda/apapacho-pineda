@@ -11,3 +11,5 @@ Ahora: Titulo | Apapacho
 Tienda de vestuario infantil hecho a mano para apapachar a quienes amas. Produciendo desde el Sur de Chile a baja escala, amando la naturaleza.
 
 -Para encabezados no se realizan cambios debido a que se considera que titulos h1,h2 y h3 utilizados tienen jerarquia.
+
+-Se utilizando ALT para imaganes
