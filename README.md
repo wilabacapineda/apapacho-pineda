@@ -1,3 +1,12 @@
+Para simular el carrito de compras:
+
+1. Abra la consola del navegador
+2. Para iniciar el carrito y/o añadir producto en la consola ejecute el comando verTienda() y siga las instrucciones. 
+    2.1. Dentro de la tienda puedes buscar productos o navegar a través de los productos de la Tienda.
+3. Para ver el carrito use verCarro().
+
+-- 
+
 - Se agregan variables, Mixins, Extends y Maps a style.scss
 
 - Se agregan los siguientes keywords: 
