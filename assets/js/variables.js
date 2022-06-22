@@ -59,8 +59,8 @@ const productos = [
 const carro = []
 
 if(window.location.origin=="https://wilabacapineda.github.io") {
-    const base_url = window.location.origin+"/apapacho-pineda";
+    var base_url = window.location.origin+"/apapacho-pineda";
 } else {
-    const base_url = window.location.origin;
+    var base_url = window.location.origin;
 }
 
