@@ -1,4 +1,3 @@
-const base_url = window.location.origin;
 const buscaTienda_icon = document.getElementById("buscaTienda-spanIcon")
 const buscaTienda_input = document.getElementById("buscaTienda-input")
 const carroTienda_icon = document.getElementById("carroTienda-spanIcon")

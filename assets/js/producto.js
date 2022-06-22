@@ -1,4 +1,3 @@
-const base_url = window.location.origin;
 const modelo = location.search.slice(1).split("&").reduce((o,i)=>(u=decodeURIComponent,[k,v]=i.split("="),o[u(k)]=v&&u(v),o),{});
 const productoTiendaX = document.getElementById("productoTienda")
 const productoNombre = document.getElementById("productoNombre")

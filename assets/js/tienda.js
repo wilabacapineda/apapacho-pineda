@@ -1,4 +1,3 @@
-const base_url = window.location.origin;
 const productosTiendaX = document.getElementById('productosTienda')
 
 function cargarTienda(){   

@@ -58,3 +58,4 @@ const productos = [
 
 const carro = []
 
+const base_url = window.location.origin;
