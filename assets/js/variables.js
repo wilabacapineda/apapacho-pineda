@@ -14,12 +14,14 @@ class Producto {
 }
 
 class ProductoCarro {
-    constructor(idProducto,detalle,cantidad,preciounitario,subtotal){
+    constructor(idProducto,modelo,detalle,cantidad,preciounitario,subtotal,img){
         this.idProducto=idProducto
+        this.modelo = modelo
         this.detalle=detalle
         this.cantidad=cantidad
         this.preciounitario=preciounitario
         this.subtotal=subtotal
+        this.img=img
     }
 }
 

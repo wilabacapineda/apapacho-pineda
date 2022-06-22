@@ -2,6 +2,8 @@ const buscaTienda_icon = document.getElementById("buscaTienda-spanIcon")
 const buscaTienda_input = document.getElementById("buscaTienda-input")
 const carroTienda_icon = document.getElementById("carroTienda-spanIcon")
 const buscaTienda_resultado = document.getElementById("buscaTienda-resultado")
+const carroTienda_div = document.getElementById("carroDiv")
+
 buscaTienda_icon.addEventListener("click", () => {
     if(buscaTienda_input.style.width){
         buscaTienda_input.style.width=""
@@ -93,4 +95,13 @@ buscaTienda_input.addEventListener('keyup',()=>{
             li.append(link)            
         })
     }    
+})
+
+carroTienda_icon.addEventListener('click', () => {
+
+    if(carroTienda_div.style.left==="0px"){
+        carroTienda_div.style.left="-27%"
+    } else {
+        carroTienda_div.style.left="0px"
+    }
 })

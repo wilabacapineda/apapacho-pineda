@@ -2,6 +2,7 @@ const modelo = location.search.slice(1).split("&").reduce((o,i)=>(u=decodeURICom
 const productoTiendaX = document.getElementById("productoTienda")
 const productoNombre = document.getElementById("productoNombre")
 const productoModelo = productos.filter((producto) => producto.modelo.toLowerCase().replaceAll(" ","-")===modelo.modelo)
+const carroTienda = document.getElementById("carrito")
 
 function cargarProducto(){
     let i = 0;  
@@ -123,12 +124,41 @@ function rangoPrecios(){
 
 function verCarro(){
     if(carro.length>0){
-        console.log("Detalle Carro:")
-        console.table(carro)
+        carroTienda.innerHTML=""
+        const ul = document.createElement('ul') 
+        carroTienda.append(ul)
         let total = carro.reduce((acc,producto) => acc + producto.subtotal,0)
-        console.log("Total: "+ total)  
+        carro.forEach( (producto) => {            
+            const li = document.createElement('li')
+            ul.append(li)
+            const link1 = document.createElement('a')
+                  link1.href="./../../pages/producto/producto.html?modelo="+producto.modelo.toLowerCase().replaceAll(" ","-")
+            const link_img=document.createElement('img')
+                  link_img.src="./../../assets/img/"+producto.img
+                  link_img.width="10px"
+            link1.append(link_img)
+            const link2 = document.createElement('a')
+                  link2.href="./../../pages/producto/producto.html?modelo="+producto.modelo.toLowerCase().replaceAll(" ","-")
+                  link2.innerHTML = producto.detalle
+            const span_info_cantidad = document.createElement('span')   
+                  span_info_cantidad.innerHTML="Cantidad: "+producto.cantidad              
+            const span_info_precio = document.createElement('span')   
+                  span_info_precio.innerHTML="Subtotal: "+producto.subtotal
+            const div_info =document.createElement('div')
+                  div_info.id="carritoInfo"
+            div_info.append(link2)
+            div_info.append(span_info_cantidad)
+            div_info.append(span_info_precio)            
+            li.append(link1)            
+            li.append(div_info)
+        })
+        const total_li = document.createElement('li')
+              total_li.id="carritoInfoTotal"
+              total_li.innerHTML="Total compra: $"+total
+        ul.append(total_li)
+
     } else {
-        console.log('Detalle Carro: Sin productos')
+        carroTienda.innerHTML="<p>El carro de compras está vacio</p>"
     }   
 }
 
@@ -232,7 +262,7 @@ function productoModeloSelect(e,f,g){
                         const producto_form_inputCantidad = document.getElementById("productoCantidad")                        
                         if(prod.stock>=producto_form_inputCantidad.value){
                             const subtotal = parseFloat(producto_form_inputCantidad.value)*parseFloat(prod.precio)                        
-                            carro.push(new ProductoCarro(prod.id,prod.modelo+" "+producto_select_g.value+" Talla "+producto_select_f.value,parseFloat(producto_form_inputCantidad.value),prod.precio,subtotal))
+                            carro.push(new ProductoCarro(prod.id,prod.modelo,prod.modelo+" "+producto_select_g.value+" Talla "+producto_select_f.value,parseFloat(producto_form_inputCantidad.value),prod.precio,subtotal,prod.img))
                             prod.stock-=parseFloat(producto_form_inputCantidad.value)                                                    
                             if(prod.stock<=0){
                                 document.getElementById("productoSubmit").disabled=true   
@@ -244,7 +274,7 @@ function productoModeloSelect(e,f,g){
                             producto_alert.style="color:red;"
                             producto_alert.innerHTML = "No quedan suficientes productos"                                                    
                         }
-                        
+                        producto_div_variations_stock.innerHTML = prod.stock + " disponibles"
                     })   
                     
                 } else {

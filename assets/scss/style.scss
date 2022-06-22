@@ -204,18 +204,27 @@ p {
         }
 
         .menu_tienda {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
+            position: fixed;
+            top: 20%;
+            right: 0;
+            background: #fff;
+            padding: 1rem;
+            border-top-left-radius: 1rem;
+            border-bottom-left-radius: 1rem;
+            transition: all 0.5s;
+            z-index: 999;
+            box-shadow: -11px 1px 17px 0px rgba(0,0,0,0.3);
             #menu_tienda {
                 display: flex;
                 gap: 1rem;
                 flex-direction: row;
                 flex-wrap: nowrap;
                 justify-content: flex-end;
+                transition: all 0.5s;
                 .input-group-text {
                     background-color:#fff;
                     padding: 0;
+                    transition: all 0.5s;
                     #buscaTienda-spanIcon {
                         width: 2rem;
                         height: 2rem;
@@ -432,9 +441,59 @@ p {
         }
     }
     
-    
-
-    
+    #carroDiv {
+        position: fixed;
+        background: #fff;
+        height: 100vh;
+        width: 25%;
+        padding: 1rem;
+        top: 0;
+        left: -27%;        
+        overflow-x: hidden;
+        overflow-y: scroll;
+        z-index: 999;
+        box-shadow: 8px 6px 11px -2px rgba(0,0,0,0.4);
+        display: flex;
+        flex-direction: column;
+        transition: all 0.5s;
+        
+        h3 {
+            text-align: center;
+            width: 100%;
+        }
+        #carrito{
+            display: flex;
+            flex-direction: column;
+            ul {
+                list-style-type: none;
+                display: flex;
+                flex-direction: column;
+                padding: 0;
+                li {
+                    display: inline-flex;
+                    justify-content: flex-start;
+                    border-bottom: 1px solid rgba(0,0,0,0.14);;
+                    a {
+                        
+                        img {
+                          max-width: 4rem;  
+                        }
+                    }
+                    #carritoInfo{
+                        display: flex;
+                        flex-direction: column;
+                    }
+                    &#carritoInfoTotal {
+                        text-align: right;
+                        justify-content: flex-end;
+                        padding: 1rem;
+                        font-weight: bold;
+                    }
+                }
+                
+            }
+        }
+    }
 
 /* Instagram */
     .background-style {
@@ -792,6 +851,12 @@ p {
         width: map-get($map: $anchos, $key: ancho_full);
         margin: 0 auto;
     }       
+}
+
+@media screen and (max-width:700px) {
+    header .menu_tienda{
+        top:32%;
+    }
 }
 
 @media screen and (max-width:420px) {
