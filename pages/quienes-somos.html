@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="./../assets/img/icon.png">
     <script src="https://kit.fontawesome.com/9d11d30b0e.js" crossorigin="anonymous"></script>
+    <script src="./../assets/js/menutienda.js" defer></script>
     <link href="./../assets/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="./../assets/css/style.css">
     <title>Quienes Somos | APAPACHO</title>
-    <script src="./../assets/js/tienda.js"></script>
     <meta name="description" content="Tienda de vestuario infantil hecho a mano para apapachar a quienes amas. Produciendo desde el Sur de Chile a baja escala, amando la naturaleza.">
     <meta name="keywords" content="Apapacho,Valdivia,Diseño,Independiente,Tienda,Ropa,Infantil,Niños,Niñas,Niñes,Niño,Niña,Niñe">
 </head>
@@ -60,6 +60,19 @@
                     </div>
                 </div>
             </nav>
+        </div>
+        <div class="menu_tienda">
+            <div class="input-group rounded" id="menu_tienda">                    
+                <span class="input-group-text" id="search-addon">
+                    <input type="search" id="buscaTienda-input" class="form-control rounded search-click" placeholder="Buscar" aria-label="Search" aria-describedby="search-addon" />
+                    <span id="buscaTienda-spanIcon"><i class="fas fa-search" id="buscaTienda-icon"></i></span>                                                
+                </span>
+                <span class="input-group-text border-0">
+                    <span id="carroTienda-spanIcon"><i class="fas fa-shopping-cart" id="carroTienda-icon"></i></span>
+                </span>
+            </div>   
+            <div id="buscaTienda-resultado">
+            </div>             
         </div>
     </header>    
     <main class="container paginas pad-2">

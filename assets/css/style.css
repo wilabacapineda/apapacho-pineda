@@ -126,6 +126,59 @@ header .principal-nav {
     background-color: #6BA4B0;
     color: #fff; }
 
+header .menu_tienda {
+  position: absolute;
+  top: 1rem;
+  right: 1rem; }
+  header .menu_tienda #menu_tienda {
+    display: flex;
+    gap: 1rem;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-end; }
+    header .menu_tienda #menu_tienda .input-group-text {
+      background-color: #fff;
+      padding: 0; }
+      header .menu_tienda #menu_tienda .input-group-text #buscaTienda-spanIcon {
+        width: 2rem;
+        height: 2rem;
+        background: black;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer; }
+      header .menu_tienda #menu_tienda .input-group-text .search-click {
+        position: relative;
+        overflow: hidden;
+        border: 0px;
+        outline: none;
+        width: 0px;
+        height: 0px;
+        padding: 0rem;
+        transition: all 0.5s; }
+      header .menu_tienda #menu_tienda .input-group-text #carroTienda-spanIcon {
+        cursor: pointer; }
+  header .menu_tienda #buscaTienda-resultado {
+    display: none;
+    width: 300px;
+    transition: all 0.5s; }
+    header .menu_tienda #buscaTienda-resultado ul {
+      list-style-type: none;
+      width: 300px;
+      display: flex;
+      flex-direction: column;
+      background: white;
+      z-index: 999;
+      box-shadow: 9px 16px 16px 5px rgba(0, 0, 0, 0.14);
+      padding: 0; }
+      header .menu_tienda #buscaTienda-resultado ul li {
+        display: inline-flex;
+        justify-content: flex-start;
+        border: 1px solid rgba(0, 0, 0, 0.14); }
+        header .menu_tienda #buscaTienda-resultado ul li a img {
+          max-width: 4rem; }
+
 /* Slider */
 .slider_apa {
   width: 100%;
@@ -213,6 +266,38 @@ header .principal-nav {
   display: grid; }
   .rangoPrecios .rangoPrecios-center {
     display: inline-flex; }
+
+#productoTienda {
+  display: flex; }
+  #productoTienda #productoNombre {
+    width: 100%; }
+  #productoTienda #productoImagen {
+    max-width: 300px; }
+  #productoTienda #productoInfo {
+    max-width: 600px; }
+    #productoTienda #productoInfo .productoSelect {
+      margin-bottom: 1rem; }
+      #productoTienda #productoInfo .productoSelect h5 {
+        margin-bottom: 0; }
+    #productoTienda #productoInfo #productoVariaciones {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start; }
+      #productoTienda #productoInfo #productoVariaciones #productoVariacionesInfo {
+        font-size: 1rem;
+        font-variant: all-small-caps; }
+      #productoTienda #productoInfo #productoVariaciones #productoVariacionesPrice {
+        font-size: 1.5rem;
+        font-weight: bolder; }
+      #productoTienda #productoInfo #productoVariaciones #productoVariacionesStock {
+        color: green; }
+    #productoTienda #productoInfo #productoForm {
+      display: flex;
+      gap: 10px;
+      flex-direction: row; }
+      #productoTienda #productoInfo #productoForm input[type=number] {
+        padding: 0 0.5rem;
+        width: 4rem; }
 
 /* Instagram */
 .background-style, .slider_apa .slide-div, .instagram {

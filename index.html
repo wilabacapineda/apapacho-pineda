@@ -6,11 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="./assets/img/icon.png">
     <script src="https://kit.fontawesome.com/9d11d30b0e.js" crossorigin="anonymous"></script>
+    <script src="./../assets/js/tienda.js" defer></script>
+    <script src="./../assets/js/variables.js"></script>
+    <script src="./../assets/js/menutienda.js" defer></script>
     <link href="./assets/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
     <title>APAPACHO | Diseño Infantil</title>
-    <script src="./assets/js/tienda.js"></script>
     <meta name="description" content="Tienda de vestuario infantil hecho a mano para apapachar a quienes amas. Produciendo desde el Sur de Chile a baja escala, amando la naturaleza.">
     <meta name="keywords" content="Apapacho,Valdivia,Diseño,Independiente,Tienda,Ropa,Infantil,Niños,Niñas,Niñes,Niño,Niña,Niñe">
 </head>
@@ -28,6 +30,7 @@
                         <h2>Diseño Infantil</h2>
                     </div>                   
                 </div>
+                
                 <span class="descripcion"><em>"Vestuario hecho a mano para apapachar a quienes amas" </em>&#128157</span>                               
             </div>
             <div class="row justify-content-md-center menu-fixed bs_gutter-x-0">
@@ -56,11 +59,24 @@
                                 </li>
                                 <li class="nav-item">
                                     <a href="./pages/contacto.html" class="nav-link">Contacto</a>
-                                </li>
+                                </li>                                
                             </ul>
                         </div>
                     </div>
                 </nav>
+            </div>
+            <div class="menu_tienda">
+                <div class="input-group rounded" id="menu_tienda">                    
+                    <span class="input-group-text" id="search-addon">
+                        <input type="search" id="buscaTienda-input" class="form-control rounded search-click" placeholder="Buscar" aria-label="Search" aria-describedby="search-addon" />
+                        <span id="buscaTienda-spanIcon"><i class="fas fa-search" id="buscaTienda-icon"></i></span>                                                
+                    </span>
+                    <span class="input-group-text border-0">
+                        <span id="carroTienda-spanIcon"><i class="fas fa-shopping-cart" id="carroTienda-icon"></i></span>
+                    </span>
+                </div>  
+                <div id="buscaTienda-resultado">
+                </div>              
             </div>
         </header>     
         <main class="row">
@@ -105,97 +121,99 @@
             <section class="col-12 pb-5">
                 <div class="pad-2 text-center zindex-popover"><h2>Productos Destacados</h2></div>
                 <div>
-                    <div class="row justify-content-center">
-                        <div id="producto_1" class="card mb-3 producto animate__animated animate__flipinX">
-                            <div class="producto_imagen">
-                                <img src="./assets/img/ModeloAmapola.jpg" class="card-img-top" alt="Modelo Amapola">
-                            </div>
-                            <div class="card-body producto_info text-center">
-                                <h5 class="card-title">Poleron Modelo "Amapola"</h5>
-                                <div class="row producto_info_precioCompra">
-                                    <p class="card-text producto_info_precioCompra_precio">
-                                        Precio $15.000
-                                    </p>
-                                </div>                                    
-                            </div>
-                            <a href="#" class="producto_comprar">
-                                <div>
-                                    <span class="producto_comprar_btn">Comprar</span>
+                    <div class="row justify-content-center" id="productosTienda">
+                        <!--
+                            <div id="producto_1" class="card mb-3 producto animate__animated animate__flipinX">
+                                <div class="producto_imagen">
+                                    <img src="./assets/img/ModeloAmapola.jpg" class="card-img-top" alt="Modelo Amapola">
                                 </div>
-                            </a>
-                        </div>
-                        <div id="producto_2" class="card mb-3 producto animate__animated animate__flipinX">
-                            <div class="producto_imagen">
-                                <img src="./assets/img/ModeloAmaranta.jpg" class="card-img-top" alt="Modelo Amaranta">
-                            </div>
-                            <div class="card-body producto_info text-center">
-                                <h5 class="card-title">Poleron Modelo "Amaranta"</h5>
-                                <div class="row producto_info_precioCompra">
-                                    <p class="card-text producto_info_precioCompra_precio">
-                                        Precio $20.000
-                                    </p>
-                                </div>                                    
-                            </div>
-                            <a href="#" class="producto_comprar">
-                                <div>
-                                    <span class="producto_comprar_btn">Comprar</span>
+                                <div class="card-body producto_info text-center">
+                                    <h5 class="card-title">Poleron Modelo "Amapola"</h5>
+                                    <div class="row producto_info_precioCompra">
+                                        <p class="card-text producto_info_precioCompra_precio">
+                                            Precio $15.000
+                                        </p>
+                                    </div>                                    
                                 </div>
-                            </a>
-                        </div>
-                        <div id="producto_3" class="card mb-3 producto animate__animated animate__flipinX">
-                            <div class="producto_imagen">
-                                <img src="./assets/img/ModeloJacinto.jpg" class="card-img-top" alt="Modelo Jacinto">
+                                <a href="#" class="producto_comprar">
+                                    <div>
+                                        <span class="producto_comprar_btn">Comprar</span>
+                                    </div>
+                                </a>
                             </div>
-                            <div class="card-body producto_info text-center">
-                                <h5 class="card-title">Poleron Modelo "Jacinto"</h5>
-                                <div class="row producto_info_precioCompra">
-                                    <p class="card-text producto_info_precioCompra_precio">
-                                        Precio $10.000
-                                    </p>
-                                </div>                                     
-                            </div>
-                            <a href="#" class="producto_comprar">
-                                <div>
-                                    <span class="producto_comprar_btn">Comprar</span>
+                            <div id="producto_2" class="card mb-3 producto animate__animated animate__flipinX">
+                                <div class="producto_imagen">
+                                    <img src="./assets/img/ModeloAmaranta.jpg" class="card-img-top" alt="Modelo Amaranta">
                                 </div>
-                            </a>
-                        </div>
-                        <div id="producto_4" class="card mb-3 producto animate__animated animate__flipinX">
-                            <div class="producto_imagen">
-                                <img src="./assets/img/ModeloNomeolvides.jpg" class="card-img-top" alt="Modelo No me Olvides">
-                            </div>
-                            <div class="card-body producto_info text-center">
-                                <h5 class="card-title">Poleron Modelo "No me olvides"</h5>
-                                <div class="row producto_info_precioCompra">
-                                    <p class="card-text producto_info_precioCompra_precio">
-                                        Precio $17.000
-                                    </p>
-                                </div>                                     
-                            </div>
-                            <a href="#" class="producto_comprar">
-                                <div>
-                                    <span class="producto_comprar_btn">Comprar</span>
+                                <div class="card-body producto_info text-center">
+                                    <h5 class="card-title">Poleron Modelo "Amaranta"</h5>
+                                    <div class="row producto_info_precioCompra">
+                                        <p class="card-text producto_info_precioCompra_precio">
+                                            Precio $20.000
+                                        </p>
+                                    </div>                                    
                                 </div>
-                            </a>
-                        </div>
-                        <div id="producto_5" class="card mb-3 producto animate__animated animate__flipinX">
-                            <div class="producto_imagen">
-                                <img src="./assets/img/ModeloVioleta.jpg" class="card-img-top" alt="Modelo Violeta">
+                                <a href="#" class="producto_comprar">
+                                    <div>
+                                        <span class="producto_comprar_btn">Comprar</span>
+                                    </div>
+                                </a>
                             </div>
-                            <div class="card-body producto_info text-center">
-                                <h5 class="card-title">Poleron Modelo "Violeta"</h5>
-                                <div class="row producto_info_precioCompra">
-                                    <p class="card-text producto_info_precioCompra_precio">
-                                        Precio $17.500
-                                    </p>
-                                </div>                                    
-                            </div>
-                            <a href="#" class="producto_comprar">
-                                <div>
-                                    <span class="producto_comprar_btn">Comprar</span>
+                            <div id="producto_3" class="card mb-3 producto animate__animated animate__flipinX">
+                                <div class="producto_imagen">
+                                    <img src="./assets/img/ModeloJacinto.jpg" class="card-img-top" alt="Modelo Jacinto">
                                 </div>
-                            </a>
-                        </div>
+                                <div class="card-body producto_info text-center">
+                                    <h5 class="card-title">Poleron Modelo "Jacinto"</h5>
+                                    <div class="row producto_info_precioCompra">
+                                        <p class="card-text producto_info_precioCompra_precio">
+                                            Precio $10.000
+                                        </p>
+                                    </div>                                     
+                                </div>
+                                <a href="#" class="producto_comprar">
+                                    <div>
+                                        <span class="producto_comprar_btn">Comprar</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div id="producto_4" class="card mb-3 producto animate__animated animate__flipinX">
+                                <div class="producto_imagen">
+                                    <img src="./assets/img/ModeloNomeolvides.jpg" class="card-img-top" alt="Modelo No me Olvides">
+                                </div>
+                                <div class="card-body producto_info text-center">
+                                    <h5 class="card-title">Poleron Modelo "No me olvides"</h5>
+                                    <div class="row producto_info_precioCompra">
+                                        <p class="card-text producto_info_precioCompra_precio">
+                                            Precio $17.000
+                                        </p>
+                                    </div>                                     
+                                </div>
+                                <a href="#" class="producto_comprar">
+                                    <div>
+                                        <span class="producto_comprar_btn">Comprar</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div id="producto_5" class="card mb-3 producto animate__animated animate__flipinX">
+                                <div class="producto_imagen">
+                                    <img src="./assets/img/ModeloVioleta.jpg" class="card-img-top" alt="Modelo Violeta">
+                                </div>
+                                <div class="card-body producto_info text-center">
+                                    <h5 class="card-title">Poleron Modelo "Violeta"</h5>
+                                    <div class="row producto_info_precioCompra">
+                                        <p class="card-text producto_info_precioCompra_precio">
+                                            Precio $17.500
+                                        </p>
+                                    </div>                                    
+                                </div>
+                                <a href="#" class="producto_comprar">
+                                    <div>
+                                        <span class="producto_comprar_btn">Comprar</span>
+                                    </div>
+                                </a>
+                            </div>
+                        -->
                     </div>
                 </div>
             </section>
@@ -268,6 +286,6 @@
             </div>
         </footer> 
     </div>
-    <script src="./assets/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/js/bootstrap.bundle.min.js"></script>    
 </body>
 </html>
