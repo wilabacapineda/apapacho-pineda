@@ -106,7 +106,6 @@ carroTienda_icon.addEventListener('click', () => {
     }
 })
 
-
 buscaTienda_input.addEventListener("keypress", function(e) {
     if (e.key === "Enter") {
       e.preventDefault();
