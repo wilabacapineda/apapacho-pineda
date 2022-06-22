@@ -1,3 +1,4 @@
+const base_url = window.location.origin;
 const modelo = location.search.slice(1).split("&").reduce((o,i)=>(u=decodeURIComponent,[k,v]=i.split("="),o[u(k)]=v&&u(v),o),{});
 const productoTiendaX = document.getElementById("productoTienda")
 const productoNombre = document.getElementById("productoNombre")
@@ -13,7 +14,7 @@ function cargarProducto(){
             productoNombre.innerHTML=producto.modelo
             //Imagen
             const producto_img = document.createElement("img")
-                  producto_img.src="./../../assets/img/"+producto.img                      
+                  producto_img.src=base_url+"/assets/img/"+producto.img                      
                   producto_img.alt=producto.modelo
             const producto_div_img = document.createElement("div")
                   producto_div_img.id="productoImagen"
@@ -132,13 +133,13 @@ function verCarro(){
             const li = document.createElement('li')
             ul.append(li)
             const link1 = document.createElement('a')
-                  link1.href="./../../pages/producto/producto.html?modelo="+producto.modelo.toLowerCase().replaceAll(" ","-")
+                  link1.href=base_url+"/pages/producto/producto.html?modelo="+producto.modelo.toLowerCase().replaceAll(" ","-")
             const link_img=document.createElement('img')
-                  link_img.src="./../../assets/img/"+producto.img
+                  link_img.src=base_url+"/assets/img/"+producto.img
                   link_img.width="10px"
             link1.append(link_img)
             const link2 = document.createElement('a')
-                  link2.href="./../../pages/producto/producto.html?modelo="+producto.modelo.toLowerCase().replaceAll(" ","-")
+                  link2.href=base_url+"/pages/producto/producto.html?modelo="+producto.modelo.toLowerCase().replaceAll(" ","-")
                   link2.innerHTML = producto.detalle
             const span_info_cantidad = document.createElement('span')   
                   span_info_cantidad.innerHTML="Cantidad: "+producto.cantidad              

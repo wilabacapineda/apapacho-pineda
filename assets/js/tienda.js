@@ -1,3 +1,4 @@
+const base_url = window.location.origin;
 const productosTiendaX = document.getElementById('productosTienda')
 
 function cargarTienda(){   
@@ -8,7 +9,7 @@ function cargarTienda(){
             const [min, max] = rangoPrecios(producto.modelo)
             //Imagen
             const producto_img = document.createElement('img')
-                  producto_img.src='./../assets/img/'+producto.img
+                  producto_img.src=base_url+'/assets/img/'+producto.img
                   producto_img.className="card-img-top"
                   producto_img.alt=producto.modelo
             const producto_div_img = document.createElement('div')
@@ -37,7 +38,7 @@ function cargarTienda(){
                   producto_a_div.className="producto_comprar_btn"
                   producto_a_div.innerHTML="Comprar"
             const producto_a=document.createElement('a')
-                  producto_a.href="./../pages/producto/producto.html?modelo="+producto.modelo.toLowerCase().replaceAll(" ","-")
+                  producto_a.href=base_url+"/pages/producto/producto.html?modelo="+producto.modelo.toLowerCase().replaceAll(" ","-")
                   producto_a.className="producto_comprar"
                   producto_a.append(producto_a_div)
             

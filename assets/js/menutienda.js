@@ -1,3 +1,4 @@
+const base_url = window.location.origin;
 const buscaTienda_icon = document.getElementById("buscaTienda-spanIcon")
 const buscaTienda_input = document.getElementById("buscaTienda-input")
 const carroTienda_icon = document.getElementById("carroTienda-spanIcon")
@@ -65,9 +66,9 @@ buscaTienda_input.addEventListener('keyup',()=>{
             const li = document.createElement('li')
             ul.append(li)
             const link = document.createElement('a')
-                  link.href="./../../pages/producto/producto.html?modelo="+producto.modelo.toLowerCase().replaceAll(" ","-")
+                  link.href=base_url+"/pages/producto/producto.html?modelo="+producto.modelo.toLowerCase().replaceAll(" ","-")
             const link_img=document.createElement('img')
-                  link_img.src="./../../assets/img/"+producto.img
+                  link_img.src=base_url+"/assets/img/"+producto.img
                   link_img.width="10px"
             link.append(link_img)
             const link_span=document.createElement('span')
@@ -84,9 +85,9 @@ buscaTienda_input.addEventListener('keyup',()=>{
             const li = document.createElement('li')
             ul.append(li)
             const link = document.createElement('a')
-                  link.href="./../../pages/producto/producto.html?modelo="+producto.modelo.toLowerCase().replaceAll(" ","-")
+                  link.href=base_url+"/pages/producto/producto.html?modelo="+producto.modelo.toLowerCase().replaceAll(" ","-")
             const link_img=document.createElement('img')
-                  link_img.src="./../../assets/img/"+producto.img
+                  link_img.src=base_url+"/assets/img/"+producto.img
                   link_img.width="10px"
             link.append(link_img)
             const link_span=document.createElement('span')
