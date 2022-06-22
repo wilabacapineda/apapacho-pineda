@@ -105,3 +105,11 @@ carroTienda_icon.addEventListener('click', () => {
         carroTienda_div.style.left="0px"
     }
 })
+
+
+buscaTienda_input.addEventListener("keypress", function(e) {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      carroTienda_icon.click();
+    }
+})
