@@ -1,9 +1,16 @@
 Para simular el carrito de compras:
 
-1. Abra la consola del navegador
-2. Para iniciar el carrito y/o añadir producto en la consola ejecute el comando verTienda() y siga las instrucciones. 
-    2.1. Dentro de la tienda puedes buscar productos o navegar a través de los productos de la Tienda.
-3. Para ver el carrito use verCarro().
+1. Se agrega un menu (de iconos) para la tienda que contiene un buscador de productos y un boton para ver el carro de compras en HTML.
+
+2. Para agregar productos al carrito se debe ir a la página del producto, accecible desde la página de Inicio o desde la página Tienda, así como también desde el buscador de productos. 
+
+3. Debido a que aun no podemos utilizar lo visto en la clase de Storage, el carro de compras solo funciona en la página Producto, para el producto seleccionado. Al cambiar de página el carro queda vacio, por lo que se puede agregar productos al carro de compras de un solo producto escogido.
+
+4. Para poder ver la página en github deploy pages tuve que crear una variable llamada "base_url" que hace una llamada window.location.origin y agregarle "/apapacho-pineda" si estamos en github page.
+
+5. Para la archivo producto.js, utilizada en la página de Productos, se utilizó una linea de código sacada de internet para poder leer una variable llamada "modelo" que se pasa a través de la url. Ejemplo: http://127.0.0.1:5501/pages/producto/producto.html?modelo=poleron-jacinto
+
+6. No es necesario utilizar el PROMPT
 
 -- 
 
