@@ -45,7 +45,6 @@ buscaTienda_input.addEventListener('keyup',()=>{
                 }                                
             }
         })
-        console.log(resultado)
         resultado.sort((a,b) => b.nprod - a.nprod)
 
         let unique = []
