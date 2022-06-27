@@ -109,7 +109,7 @@ buscaTienda_input.addEventListener('keyup',()=>{
 
 carroTienda_icon.addEventListener('click', () => {
     if(carroTienda_div.style.left==="0px"){
-        carroTienda_div.style.left="-300px"
+        carroTienda_div.style.left="-310px"
     } else {
         carroTienda_div.style.left="0px"
     }
@@ -118,7 +118,7 @@ carroTienda_icon.addEventListener('click', () => {
 carroTienda_title.addEventListener('click', (e) => {
     e.preventDefault()
     if(carroTienda_div.style.left==="0px"){
-        carroTienda_div.style.left="-300px"
+        carroTienda_div.style.left="-310px"
     } else {
         carroTienda_div.style.left="0px"
     }  
