@@ -320,10 +320,10 @@ header .menu_tienda {
   position: fixed;
   background: #fff;
   height: 100vh;
-  width: 25%;
+  width: 300px;
   padding: 1rem;
   top: 0;
-  left: -27%;
+  left: -300px;
   overflow-x: hidden;
   overflow-y: scroll;
   z-index: 999;
