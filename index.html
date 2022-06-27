@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="./assets/img/icon.png">
     <script src="https://kit.fontawesome.com/9d11d30b0e.js" crossorigin="anonymous"></script>
-    <script src="./assets/js/tienda.js" defer></script>
-    <script src="./assets/js/variables.js"></script>
+    <script src="./assets/js/carrito.js" defer></script>
     <script src="./assets/js/menutienda.js" defer></script>
+    <script src="./assets/js/tienda.js" defer></script>
     <link href="./assets/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
@@ -66,9 +66,9 @@
                 </nav>
             </div>
             <div class="menu_tienda">
-                <div class="input-group rounded" id="menu_tienda">                    
+                <div class="input-group" id="menu_tienda">                    
                     <span class="input-group-text" id="search-addon">
-                        <input type="search" id="buscaTienda-input" class="form-control rounded search-click" placeholder="Buscar" aria-label="Search" aria-describedby="search-addon" />
+                        <input type="search" id="buscaTienda-input" class="form-control search-click" placeholder="Buscar" aria-label="Search" aria-describedby="search-addon" />
                         <span id="buscaTienda-spanIcon"><i class="fas fa-search" id="buscaTienda-icon"></i></span>                                                
                     </span>
                     <span class="input-group-text border-0">
@@ -287,7 +287,7 @@
         </footer> 
     </div>
     <div id="carroDiv">
-        <h3>Carrito de Compras</h3>
+        <h3>Carrito de Compras <a href="#" id="close"><i class="fas fa-times"></i></a></h3>
         <div id="carrito">
             <p>El carro de compras está vacio</p>
         </div>

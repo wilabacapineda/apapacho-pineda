@@ -3,6 +3,7 @@ const buscaTienda_input = document.getElementById("buscaTienda-input")
 const carroTienda_icon = document.getElementById("carroTienda-spanIcon")
 const buscaTienda_resultado = document.getElementById("buscaTienda-resultado")
 const carroTienda_div = document.getElementById("carroDiv")
+const carroTienda_title = carroTienda_div.querySelector("h3 #close")
 
 buscaTienda_icon.addEventListener("click", () => {
     if(buscaTienda_input.style.width){
@@ -64,7 +65,12 @@ buscaTienda_input.addEventListener('keyup',()=>{
             const li = document.createElement('li')
             ul.append(li)
             const link = document.createElement('a')
-                  link.href=base_url+"/pages/producto/producto.html?modelo="+producto.modelo.toLowerCase().replaceAll(" ","-")
+                  link.href=base_url+"/pages/producto/producto.html"
+                  link.addEventListener('click',(e)=>{
+                    e.preventDefault()
+                    sessionStorage.setItem('modelo',producto.modelo.toLowerCase().replaceAll(" ","-"))
+                    window.location.href=base_url+"/pages/producto/producto.html"             
+                  })
             const link_img=document.createElement('img')
                   link_img.src=base_url+"/assets/img/"+producto.img
                   link_img.width="10px"
@@ -83,7 +89,12 @@ buscaTienda_input.addEventListener('keyup',()=>{
             const li = document.createElement('li')
             ul.append(li)
             const link = document.createElement('a')
-                  link.href=base_url+"/pages/producto/producto.html?modelo="+producto.modelo.toLowerCase().replaceAll(" ","-")
+                  link.href=base_url+"/pages/producto/producto.html"
+                  link.addEventListener('click',(e)=>{
+                    e.preventDefault()
+                    sessionStorage.setItem('modelo',producto.modelo.toLowerCase().replaceAll(" ","-"))
+                    window.location.href=base_url+"/pages/producto/producto.html"             
+                  })
             const link_img=document.createElement('img')
                   link_img.src=base_url+"/assets/img/"+producto.img
                   link_img.width="10px"
@@ -105,9 +116,11 @@ carroTienda_icon.addEventListener('click', () => {
     }
 })
 
-buscaTienda_input.addEventListener("keypress", function(e) {
-    if (e.key === "Enter") {
-      e.preventDefault();
-      carroTienda_icon.click();
-    }
+carroTienda_title.addEventListener('click', (e) => {
+    e.preventDefault()
+    if(carroTienda_div.style.left==="0px"){
+        carroTienda_div.style.left="-27%"
+    } else {
+        carroTienda_div.style.left="0px"
+    }  
 })

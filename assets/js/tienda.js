@@ -18,7 +18,7 @@ function cargarTienda(){
             //Precio
             const producto_precio = document.createElement('p')
                   producto_precio.className="card-text producto_info_precioCompra_precio"
-                  producto_precio.append("$"+min+"-$"+max)
+                  producto_precio.append("$"+min.toLocaleString()+"-$"+max.toLocaleString())
             const producto_precio_div = document.createElement('div')
                   producto_precio_div.className="row producto_info_precioCompra"
                   producto_precio_div.append(producto_precio)
@@ -37,10 +37,16 @@ function cargarTienda(){
                   producto_a_div.className="producto_comprar_btn"
                   producto_a_div.innerHTML="Comprar"
             const producto_a=document.createElement('a')
-                  producto_a.href=base_url+"/pages/producto/producto.html?modelo="+producto.modelo.toLowerCase().replaceAll(" ","-")
+                  producto_a.href=base_url+"/pages/producto/producto.html"
                   producto_a.className="producto_comprar"
+                  producto_a.id=producto.modelo
                   producto_a.append(producto_a_div)
-            
+                  producto_a.addEventListener('click',(e)=>{
+                    e.preventDefault()
+                    sessionStorage.setItem('modelo',producto.modelo.toLowerCase().replaceAll(" ","-"))
+                    window.location.href=base_url+"/pages/producto/producto.html"             
+                  })
+
             const producto_div = document.createElement('div')
                   producto_div.id=producto.modelo.toLowerCase().replaceAll(" ","-")
                   producto_div.className="card mb-3 producto animate__animated animate__flipinX"
@@ -50,10 +56,6 @@ function cargarTienda(){
             productosTiendaX.append(producto_div)
         }
     } )
-
-    for(const producto of productos){                
-        
-    }
 }
 cargarTienda()
 

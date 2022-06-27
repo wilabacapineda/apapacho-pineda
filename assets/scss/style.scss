@@ -207,13 +207,13 @@ p {
             position: fixed;
             top: 20%;
             right: 0;
-            background: #fff;
+            background: $color_texto-hover_active;
             padding: 1rem;
             border-top-left-radius: 1rem;
             border-bottom-left-radius: 1rem;
             transition: all 0.5s;
             z-index: 999;
-            box-shadow: -11px 1px 17px 0px rgba(0,0,0,0.3);
+            box-shadow: -11px 1px 17px 0px $color_fondo-shadow_darklight;
             #menu_tienda {
                 display: flex;
                 gap: 1rem;
@@ -222,18 +222,22 @@ p {
                 justify-content: flex-end;
                 transition: all 0.5s;
                 .input-group-text {
-                    background-color:#fff;
+                    background-color:$color_texto-hover_active;
                     padding: 0;
                     transition: all 0.5s;
+                    border: 0;
                     #buscaTienda-spanIcon {
                         width: 2rem;
                         height: 2rem;
-                        background: black;
-                        color: white;
+                        background: $color_fondo;
+                        color: $color_texto-hover_active;
                         display: flex;
                         justify-content: center;
                         align-items: center;
                         cursor: pointer;
+                        &:hover{
+                            color:$color_fondo-hover;
+                        }
                     }
                     .search-click {
                         position: relative;
@@ -244,9 +248,16 @@ p {
                         height: 0px;
                         padding: 0rem;
                         transition: all 0.5s;
+                        border-top-right-radius: 0px;
+                        border-bottom-right-radius: 0px;
+
                     }
                     #carroTienda-spanIcon {
                         cursor: pointer;
+                        color: $color_texto-a;
+                        &:hover {
+                            color:$color_texto-a_visited;
+                        }
                     }
                 }
             }
@@ -443,7 +454,7 @@ p {
     
     #carroDiv {
         position: fixed;
-        background: #fff;
+        background: $color_fondo;
         height: 100vh;
         width: 25%;
         padding: 1rem;
@@ -452,15 +463,29 @@ p {
         overflow-x: hidden;
         overflow-y: scroll;
         z-index: 999;
-        box-shadow: 8px 6px 11px -2px rgba(0,0,0,0.4);
+        box-shadow: 8px 6px 11px -2px $color_fondo-shadow_dark;
         display: flex;
         flex-direction: column;
-        transition: all 0.5s;
-        
+        transition: all 0.5s;        
         h3 {
-            text-align: center;
             width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-content: center;
+            align-items: center;
+            #close{
+                color: $color_texto-hover_active;
+                display: none;
+                &:hover {
+                    color:$color_fondo-hover;
+                }
+            }
         }
+        &:hover > h3 #close {
+            display: block;
+        }
+
         #carrito{
             display: flex;
             flex-direction: column;
@@ -472,7 +497,7 @@ p {
                 li {
                     display: inline-flex;
                     justify-content: flex-start;
-                    border-bottom: 1px solid rgba(0,0,0,0.14);;
+                    border-bottom: 1px solid $color_fondo-shadow_light;
                     a {
                         
                         img {
@@ -482,6 +507,33 @@ p {
                     #carritoInfo{
                         display: flex;
                         flex-direction: column;
+                        div {
+                            display: flex;
+                            flex-direction: row;                            
+                            div#carritoInfo-start {
+                                display: flex;
+                                flex-direction: column;
+                                align-items: flex-start;
+                                justify-content: flex-start;
+                                #carritoInfo-start-cantidad{
+                                    display: flex;
+                                    flex-direction: row;
+                                    gap: 5px;
+                                    align-items: center;
+                                    input {
+                                        max-width: 4rem;
+                                    }
+                                }
+                            }
+                            div#carritoInfo-del {
+                                align-items:center;
+                                justify-content: center;
+                                padding: 0 1rem;
+                                a:hover {
+                                    color:$color_fondo-hover
+                                }
+                            }
+                        }
                     }
                     &#carritoInfoTotal {
                         text-align: right;
