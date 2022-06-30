@@ -70,7 +70,6 @@ if(localStorage.getItem('carrito')){
     for(const aux of carro_aux){        
       const productoModeloID = productos.find((prod) => prod.id===aux.idProducto)
       if(productoModeloID.stock>0){
-
             if(aux.cantidad>productoModeloID.stock){
                   aux.cantidad=productoModeloID.stock                  
                   aux.stock=0
@@ -78,8 +77,7 @@ if(localStorage.getItem('carrito')){
             aux.subtotal=aux.preciounitario*aux.cantidad
             productoModeloID.stock-=parseInt(aux.cantidad) 
             aux.stock=productoModeloID.stock
-            carro.push(new ProductoCarro(aux.idProducto,aux.modelo,aux.detalle,aux.cantidad,aux.preciounitario,aux.subtotal,aux.img,aux.stock))      
-                              
+            carro.push(new ProductoCarro(aux.idProducto,aux.modelo,aux.detalle,aux.cantidad,aux.preciounitario,aux.subtotal,aux.img,aux.stock))                                    
       }        
     }
     writeCarrito()
