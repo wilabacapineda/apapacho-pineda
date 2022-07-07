@@ -428,6 +428,16 @@ header .menu_tienda {
           justify-content: flex-end;
           padding: 1rem;
           font-weight: bold; }
+    #carroDiv #carrito p {
+      display: flex; }
+      #carroDiv #carrito p a {
+        text-decoration: none;
+        color: #fff;
+        text-align: center;
+        background: #6BA4B0;
+        padding: 1rem;
+        width: 100%;
+        border-radius: 5px; }
 
 /* Instagram */
 .background-style, .slider_apa .slide-div, .instagram {

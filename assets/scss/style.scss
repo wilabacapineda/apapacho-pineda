@@ -603,6 +603,18 @@ p {
                 }
                 
             }
+            p {
+                display: flex;
+                a {
+                    text-decoration: none;
+                    color:$color_texto-a;
+                    text-align: center;
+                    background: $color_texto-hover_active;
+                    padding: 1rem;
+                    width: 100%;
+                    border-radius: 5px;
+                }
+            }
         }
     }
 
