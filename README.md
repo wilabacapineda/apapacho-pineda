@@ -1,3 +1,8 @@
+Se agrega la libreria SweetAlert2.
+usando la incorporación de jsdelivr CDN `<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>`
+
+Esta libreria se utiliza para hacer preguntas de confirmación para la incoporación o eliminación de productos al carro de Compras.
+
 Para simular el carrito de compras:
 
 1. Menu de tienda que contiene un buscador de productos y un boton para ver el carro de compras en HTML.
