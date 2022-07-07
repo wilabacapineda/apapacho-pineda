@@ -1,6 +1,5 @@
 const productosTiendaX = document.getElementById('productosTienda')
-
-function cargarTienda(){   
+cargarTienda = () =>{   
     const aux = []
     productos.forEach( (producto) => {
         if(aux.indexOf(producto.modelo)==-1){            
@@ -57,7 +56,9 @@ function cargarTienda(){
         }
     } )
 }
-cargarTienda()
+if(productosTiendaX) {
+ cargarTienda()
+}
 
 function rangoPrecios(modelo){
     let min = 0
@@ -74,3 +75,5 @@ function rangoPrecios(modelo){
     })  
     return [min,max]
 }
+
+

@@ -230,8 +230,23 @@ if(modelo){
                                     producto_form.append(producto_form_inputSubmit)
                                     //Evento Agregar al Carrito
                                     producto_form_inputSubmit.addEventListener("click",(e) => {
-                                          e.preventDefault()                        
-                                          addCarrito(prod.id)
+                                          e.preventDefault() 
+                                          Swal.fire({
+                                                title: '¿Deseas ir al Carro de Compras?',
+                                                showDenyButton: true,
+                                                showCancelButton: false,
+                                                confirmButtonText: 'Ir al Carrito',
+                                                denyButtonText: `Seguir Comprando`,
+                                              }).then((result) => {
+                                                /* Read more about isConfirmed, isDenied below */
+                                                if (result.isConfirmed) {
+                                                      addCarrito(prod.id)
+                                                      window.location.href=base_url+"/pages/carrito.html"
+                                                } else if (result.isDenied) {
+                                                      addCarrito(prod.id)
+                                                      window.location.href=base_url+"/pages/tienda.html"
+                                                }
+                                              })
                                     })   
                                     
                               } else {
