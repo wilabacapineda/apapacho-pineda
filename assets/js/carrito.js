@@ -62,7 +62,6 @@ const productos = [
     new Producto(27,'Poleron','Poleron Violeta','','L','Violeta',3,20000,2,'ModeloVioleta.jpg'),
     new Producto(28,'Poleron','Poleron Violeta','','XL','Violeta',2,22500,1,'ModeloVioleta.jpg')
 ]
-
 const carro = []
 const carroTienda = document.getElementById("carrito")
 const writeCarrito = () => {
@@ -70,6 +69,13 @@ const writeCarrito = () => {
             carroTienda.innerHTML=""
             const ul = document.createElement("ul") 
             carroTienda.append(ul)
+            const link_carrito = document.createElement("p")
+            const link_carrito_a=document.createElement("a")                  
+                  link_carrito_a.href=base_url+"/pages/carrito.html"
+                  link_carrito_a.innerHTML="Ir al Carrito"
+            link_carrito.append(link_carrito_a)
+            carroTienda.append(link_carrito)            
+
             let total = carro.reduce((acc,producto) => acc + producto.subtotal,0)
             carro.forEach( (producto) => {            
                   const li = document.createElement("li")
