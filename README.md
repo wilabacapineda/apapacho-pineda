@@ -1,7 +1,7 @@
-Se agrega la libreria SweetAlert2.
-usando la incorporación de jsdelivr CDN `<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>`
-
-Esta libreria se utiliza para hacer preguntas de confirmación para la incoporación o eliminación de productos al carro de Compras.
+- Se agrega listado de productos en archivo /assets/js/stock.json
+- El archivo stock.json se carga a través de Fetch y se agregan los productos al array productos.
+- Se agrega página de Carro de Compras
+- Se agrega eventos para filtrado de productos en tienda
 
 Para simular el carrito de compras:
 
@@ -17,3 +17,5 @@ Para simular el carrito de compras:
 
 6. Cambio de nombres en los archivos .JS utilizados.
     - variables.js -> carrito.js
+
+7. Se utiliza la libreria SweetAlert2 usando la incorporación de jsdelivr CDN `<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>`. Esta libreria se utiliza para hacer preguntas de confirmación para la incoporación o eliminación de productos al carro de Compras.

@@ -460,13 +460,17 @@ p {
         
         }
     }
-
+    .filter_color, .filter_talla{
+        color:black;
+        text-decoration: none;
+    }
     .cuadrado {
         display: inline-block;
         width: 10px; 
         height: 10px; 
+        
     }
-
+    
     .rangoPrecios{
         display: grid;
         .rangoPrecios-center {

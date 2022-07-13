@@ -6,7 +6,7 @@
         "descripcion":"",
         "talla":"S",
         "color":"Amaranta",
-        "stock":2,
+        "stock":0,
         "precio":20000,
         "ventas":1,
         "img":"ModeloAmaranta.jpg"
@@ -78,7 +78,7 @@
         "descripcion":"",
         "talla":"L",
         "color":"Amapola",
-        "stock":3,
+        "stock":0,
         "precio":17500,
         "ventas":2,
         "img":"ModeloAmapola.jpg"
@@ -162,7 +162,7 @@
         "descripcion":"",
         "talla":"M",
         "color":"Gris",
-        "stock":3,
+        "stock":0,
         "precio":12500,
         "ventas":5,
         "img":"ModeloJacinto.jpg"
@@ -245,7 +245,7 @@
         "modelo":"Poleron No me olvides",
         "descripcion":"",
         "talla":"S",
-        "color":"Morado",
+        "color":"Gris",
         "stock":2,
         "precio":17000,
         "ventas":2,
@@ -257,7 +257,7 @@
         "modelo":"Poleron No me olvides",
         "descripcion":"",
         "talla":"M",
-        "color":"Morado",
+        "color":"Gris",
         "stock":3,
         "precio":19000,
         "ventas":4,
@@ -269,7 +269,7 @@
         "modelo":"Poleron No me olvides",
         "descripcion":"",
         "talla":"L",
-        "color":"Morado",
+        "color":"Gris",
         "stock":3,
         "precio":19000,
         "ventas":3,
@@ -281,7 +281,7 @@
         "modelo":"Poleron No me olvides",
         "descripcion":"",
         "talla":"XL",
-        "color":"Morado",
+        "color":"Gris",
         "stock":2,
         "precio":21000,
         "ventas":5,
@@ -289,6 +289,54 @@
     },
     {
         "id":25,
+        "categoria":"Poleron",
+        "modelo":"Poleron No me olvides",
+        "descripcion":"",
+        "talla":"S",
+        "color":"Morado",
+        "stock":2,
+        "precio":17000,
+        "ventas":2,
+        "img":"ModeloNomeolvides.jpg"
+    },
+    {
+        "id":26,
+        "categoria":"Poleron",
+        "modelo":"Poleron No me olvides",
+        "descripcion":"",
+        "talla":"M",
+        "color":"Morado",
+        "stock":3,
+        "precio":19000,
+        "ventas":4,
+        "img":"ModeloNomeolvides.jpg"
+    },
+    {
+        "id":27,
+        "categoria":"Poleron",
+        "modelo":"Poleron No me olvides",
+        "descripcion":"",
+        "talla":"L",
+        "color":"Morado",
+        "stock":3,
+        "precio":19000,
+        "ventas":3,
+        "img":"ModeloNomeolvides.jpg"
+    },
+    {
+        "id":28,
+        "categoria":"Poleron",
+        "modelo":"Poleron No me olvides",
+        "descripcion":"",
+        "talla":"XL",
+        "color":"Morado",
+        "stock":2,
+        "precio":21000,
+        "ventas":5,
+        "img":"ModeloNomeolvides.jpg"
+    },
+    {
+        "id":29,
         "categoria":"Poleron",
         "modelo":"Poleron Violeta",
         "descripcion":"",
@@ -300,7 +348,7 @@
         "img":"ModeloVioleta.jpg"
     },
     {
-        "id":26,
+        "id":30,
         "categoria":"Poleron",
         "modelo":"Poleron Violeta",
         "descripcion":"",
@@ -312,7 +360,7 @@
         "img":"ModeloVioleta.jpg"
     },
     {
-        "id":27,
+        "id":31,
         "categoria":"Poleron",
         "modelo":"Poleron Violeta",
         "descripcion":"",
@@ -324,7 +372,7 @@
         "img":"ModeloVioleta.jpg"
     },
     {
-        "id":28,
+        "id":32,
         "categoria":"Poleron",
         "modelo":"Poleron Violeta",
         "descripcion":"",

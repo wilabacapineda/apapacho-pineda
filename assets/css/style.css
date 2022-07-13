@@ -322,6 +322,10 @@ header .menu_tienda {
       opacity: 1;
       text-decoration: none; }
 
+.filter_color, .filter_talla {
+  color: black;
+  text-decoration: none; }
+
 .cuadrado {
   display: inline-block;
   width: 10px;
