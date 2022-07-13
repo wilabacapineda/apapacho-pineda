@@ -381,6 +381,14 @@ p {
     }
 
 /* Tienda */
+    .mostrar_error {
+        width: 100%;
+        text-align: center;
+        padding: 1rem;
+        background: goldenrod;
+        color: black;
+        font-weight: bold;
+    }
     .productos .row {
         @extend .bs_gutter-x-0;
         justify-content: center;

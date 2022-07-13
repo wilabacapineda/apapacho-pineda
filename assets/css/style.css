@@ -264,6 +264,14 @@ header .menu_tienda {
   background-image: url(./../img/apapacho-24.JPG); }
 
 /* Tienda */
+.mostrar_error {
+  width: 100%;
+  text-align: center;
+  padding: 1rem;
+  background: goldenrod;
+  color: black;
+  font-weight: bold; }
+
 .productos .row {
   justify-content: center; }
 

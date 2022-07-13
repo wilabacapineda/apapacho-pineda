@@ -1,11 +1,10 @@
 //const modelo = location.search.slice(1).split("&").reduce((o,i)=>(u=decodeURIComponent,[k,v]=i.split("="),o[u(k)]=v&&u(v),o),{});
 const modelo = sessionStorage.getItem('modelo')
-if(modelo){
+const verProducto = () => {
       const productoModelo = productos.filter((producto) => producto.modelo.toLowerCase().replaceAll(" ","-")===modelo)
       if(productoModelo){
             const productoTiendaX = document.getElementById("productoTienda")
             const productoNombre = document.getElementById("productoNombre")
-                        
             function cargarProducto(){
                   let i = 0;  
                   [min,max]=rangoPrecios(modelo)  
@@ -107,6 +106,7 @@ if(modelo){
                               producto_select_talla.append(producto_select_talla_option)
                         }
                   })
+
                   const options_color = document.getElementById("productoSelectColor").querySelectorAll("option")
                   if(options_color.length==2){
                         options_color[1].selected=true
@@ -261,6 +261,8 @@ if(modelo){
       } else {
             window.location.href=base_url+"/pages/tienda.html"
       }
-} else {
+}
+
+if(!modelo){
       window.location.href=base_url+"/pages/tienda.html"
 }
