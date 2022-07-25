@@ -470,7 +470,25 @@ p {
         height: 10px; 
         
     }
-    
+    #text_filtro {
+        display: none;
+        flex-direction: row;
+        align-content: center;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 10px;
+        padding-bottom:1.5rem;
+    }
+    .text_filtro_span {
+        display: flex;
+        align-content: center;
+        align-items: center;
+        gap: 5px;
+        border: 1px;
+        border-style: solid;
+        padding: 0 0.5rem;
+        border-radius: 10px;
+    }
     .rangoPrecios{
         display: grid;
         .rangoPrecios-center {

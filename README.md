@@ -1,5 +1,5 @@
 - Se agrega listado de productos en archivo /assets/js/stock.json
-- El archivo stock.json se carga a través de Fetch y se agregan los productos al array productos.
+- El archivo stock.json se carga a través de Fetch y se agregan los productos al array de objetos productos.
 - Se agrega página de Carro de Compras
 - Se agrega eventos para filtrado de productos en tienda
 
