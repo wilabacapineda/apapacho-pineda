@@ -34,6 +34,7 @@ class ProductoCarro {
 
 const URL = `${base_url}/assets/js/stock.json`
 const productos = []
+  
 const cargarProductos = (URL) => {
       fetch(URL)
       .then( (response) => response.json() )
@@ -78,6 +79,7 @@ const cargarProductos = (URL) => {
             const errorx = document.getElementById("error")
                   errorx.innerHTML="Tenemos problemas para cargar productos y el carrito."
                   errorx.classList.add("mostrar_error")
+                  console.log(error)
       })
 }
 cargarProductos(URL)
@@ -187,7 +189,7 @@ const writeCarrito = () => {
       })
       const total_li = document.createElement("li")
             total_li.id="carritoInfoTotal"
-            total_li.innerHTML="Total compra: $"+total.toLocaleString()
+            total_li.innerHTML="SubTotal compra: $"+total.toLocaleString()
       ul.append(total_li)
   
       } else {
@@ -295,15 +297,29 @@ cargarCarrito = () => {
       })
       const total_li = document.createElement("span")
             total_li.id="carritoInfoTotal"
-            total_li.innerHTML="Total compra: $"+total.toLocaleString()
+            total_li.innerHTML="SubTotal compra: $"+total.toLocaleString()
       divCarrito.append(total_li)
       const checkout_subtotal = document.getElementById("checkout_subtotal")
-      const checkout_envio= document.getElementById("checkout_envio")
       const checkout_total=document.getElementById("checkout_total")
             if(checkout_subtotal){
                   checkout_subtotal.innerHTML=total.toLocaleString()
                   if(localStorage.getItem('envio')){
-                        costoEnvio()
+                        const envio = JSON.parse(localStorage.getItem('envio'))   
+                        const chile = `${base_url}/assets/js/comunas.json`
+                        fetch(chile)
+                        .then( (response) => response.json() )
+                        .then( (data) => {
+                              for(const r in data){
+                                    if(data[r].Region==envio[0]){
+                                          for(const c of data[r].Comuna){
+                                                if(c==envio[1]){
+                                                      checkout_envio.innerHTML=data[r].Precio.toLocaleString()
+                                                      checkout_total.innerHTML=(parseInt(total)+parseInt(data[r].Precio)).toLocaleString()
+                                                }
+                                          }
+                                    }
+                              }
+                        })                        
                   } else {
                         checkout_total.innerHTML=total.toLocaleString()
                   }
@@ -549,7 +565,7 @@ const costoEnvio = () => {
             }
       })
       localStorage.setItem('envio',JSON.stringify(envio)) 
-}   
+} 
 
 const select_envio = document.getElementById("info_envio")
 if(select_envio){
@@ -657,9 +673,9 @@ if(select_envio){
                   select_comuna.value=envio[1]
                   select_envio_ciudad.value=envio[2]
                   select_envio_dir.value=envio[3]      
-                  document.getElementById("agregarEnvio").disabled=false                  
-                  costoEnvio()
+                  document.getElementById("agregarEnvio").disabled=false  
             } 
                   
       })
 }
+
