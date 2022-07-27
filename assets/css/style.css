@@ -91,6 +91,24 @@ img {
     justify-content: space-between;
     max-width: 200px; }
 
+#envio_checkout {
+  width: 100%;
+  text-align: center;
+  padding: 1rem; }
+  #envio_checkout button {
+    background-color: #6BA4B0;
+    color: #fff; }
+
+#info_envio {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  gap: 10px; }
+  #info_envio .envioInfo input, #info_envio .envioInfo select {
+    width: 100%; }
+  #info_envio .envioInfo span {
+    font-size: 0.9rem; }
+
 #productosCarrito #productoCarrito {
   display: flex;
   flex-direction: column;

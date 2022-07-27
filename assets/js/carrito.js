@@ -297,7 +297,17 @@ cargarCarrito = () => {
             total_li.id="carritoInfoTotal"
             total_li.innerHTML="Total compra: $"+total.toLocaleString()
       divCarrito.append(total_li)
-  
+      const checkout_subtotal = document.getElementById("checkout_subtotal")
+      const checkout_envio= document.getElementById("checkout_envio")
+      const checkout_total=document.getElementById("checkout_total")
+            if(checkout_subtotal){
+                  checkout_subtotal.innerHTML=total.toLocaleString()
+                  if(localStorage.getItem('envio')){
+                        costoEnvio()
+                  } else {
+                        checkout_total.innerHTML=total.toLocaleString()
+                  }
+            }            
       } else {
             productosCarritoX.innerHTML="<p>El carro de compras está vacio</p>"
       } 
@@ -508,5 +518,148 @@ const borrarCarrito = (id) => {
     
 }
 
+const agregarEnvio = document.getElementById("agregarEnvio")
+if(agregarEnvio){
+      agregarEnvio.addEventListener("click", () => {
+            costoEnvio()
+      })
+} 
+const costoEnvio = () => {
+      const region = document.getElementById("region").value
+      const comuna = document.getElementById("comuna").value
+      const ciudad = document.getElementById("ciudad").value
+      const direccion = document.getElementById("direccion").value
+      const envio = [region, comuna, ciudad, direccion]
+      const chile = `${base_url}/assets/js/comunas.json`
+      fetch(chile)
+      .then( (response) => response.json() )
+      .then( (data) => {
+            for(const r in data){
+                  if(data[r].Region==region){
+                        for(const c of data[r].Comuna){
+                              if(c==comuna){
+                                    const total = carro.reduce((acc,producto) => acc + producto.subtotal,0)
+                                    const checkout_total=document.getElementById("checkout_total")
+                                    const checkout_envio = document.getElementById("checkout_envio")
+                                          checkout_envio.innerHTML=data[r].Precio.toLocaleString()
+                                    checkout_total.innerHTML=(parseInt(total)+parseInt(data[r].Precio)).toLocaleString()
+                              }
+                        }
+                  }
+            }
+      })
+      localStorage.setItem('envio',JSON.stringify(envio)) 
+}   
 
-      
+const select_envio = document.getElementById("info_envio")
+if(select_envio){
+      const chile = `${base_url}/assets/js/comunas.json`
+      fetch(chile)
+      .then( (response) => response.json() )
+      .then( (data) => {                   
+            const select_comuna = document.createElement("select")
+                  select_comuna.id="comuna"  
+                  select_comuna.name="comuna"                
+                  select_comuna.disabled=true
+                  select_comuna.addEventListener("change", () => {
+                        document.getElementById("agregarEnvio").disabled=false
+                  })
+            const select_envio_comunatitle=document.createElement("span")                  
+                  select_envio_comunatitle.innerHTML="Comuna"
+            const select_envio_Comuna = document.createElement("span")
+                  select_envio_Comuna.className="envioInfo"
+                  select_envio_Comuna.append(select_comuna)
+                  select_envio_Comuna.append(select_envio_comunatitle)
+
+            const select_region = document.createElement("select")
+                  select_region.id="region"
+                  select_region.name="region"
+                  select_region.addEventListener("change", (e) => {
+                        select_comuna.innerHTML=""
+                        const select_comuna_option = document.createElement("option")
+                              select_comuna_option.value=""
+                              select_comuna_option.innerHTML="Seleccion Comuna"
+                              select_comuna_option.disabled=true
+                              select_comuna_option.selected=true
+                              select_comuna.append(select_comuna_option)
+                        for(const r in data){
+                              if(e.currentTarget.value==data[r].Region){
+                                    for(const c of data[r].Comuna){
+                                          const select_comuna_option = document.createElement("option")
+                                                select_comuna_option.value=c
+                                                select_comuna_option.innerHTML=c
+                                                select_comuna.append(select_comuna_option)
+                                    }
+                                    select_comuna.disabled=false
+                              }
+                        }
+                  })  
+                  const select_envio_regiontitle=document.createElement("span")                  
+                        select_envio_regiontitle.innerHTML="Región"
+                  const select_envio_Region = document.createElement("span")
+                        select_envio_Region.className="envioInfo"
+                        select_envio_Region.append(select_region)
+                        select_envio_Region.append(select_envio_regiontitle)                                  
+            for(const r in data){
+                  const select_region_option = document.createElement("option")
+                        select_region_option.value=data[r].Region
+                        select_region_option.innerHTML=data[r].Region                                               
+                  select_region.append(select_region_option)
+            }            
+
+            const select_envio_ciudad=document.createElement("input")
+                  select_envio_ciudad.type="text"
+                  select_envio_ciudad.name="ciudad"
+                  select_envio_ciudad.id="ciudad"
+            const select_envio_ciudadtitle=document.createElement("span")                  
+                  select_envio_ciudadtitle.innerHTML="Ciudad"
+            const select_envio_City = document.createElement("span")
+                  select_envio_City.className="envioInfo"
+                  select_envio_City.append(select_envio_ciudad)
+                  select_envio_City.append(select_envio_ciudadtitle)
+
+            const select_envio_dir=document.createElement("input")
+                  select_envio_dir.type="text"
+                  select_envio_dir.name="direccion"
+                  select_envio_dir.id="direccion"
+            const select_envio_dirtitle=document.createElement("span")                  
+                  select_envio_dirtitle.innerHTML="Dirección"
+            const select_envio_Dir = document.createElement("span")
+                  select_envio_Dir.className="envioInfo"
+                  select_envio_Dir.append(select_envio_dir)
+                  select_envio_Dir.append(select_envio_dirtitle)
+
+            select_envio.append(select_envio_Region)
+            select_envio.append(select_envio_Comuna)
+            select_envio.append(select_envio_City)
+            select_envio.append(select_envio_Dir)     
+
+            if(localStorage.getItem('envio')){
+                  const envio = JSON.parse(localStorage.getItem('envio'))     
+                  select_region.value=envio[0]  
+                  select_comuna.innerHTML=""
+                  const select_comuna_option = document.createElement("option")
+                        select_comuna_option.value=""
+                        select_comuna_option.innerHTML="Seleccion Comuna"
+                        select_comuna_option.disabled=true
+                        select_comuna.append(select_comuna_option)
+                  for(const r in data){
+                        if(envio[0]==data[r].Region){
+                              for(const c of data[r].Comuna){
+                                    const select_comuna_option = document.createElement("option")
+                                          select_comuna_option.value=c
+                                          select_comuna_option.innerHTML=c
+                                          select_comuna.append(select_comuna_option)
+                              }
+                              select_comuna.disabled=false
+                        }
+                  }      
+                  select_comuna.value=envio[1]
+                  select_envio_ciudad.value=envio[2]
+                  select_envio_dir.value=envio[3]      
+                  document.getElementById("agregarEnvio").disabled=false                  
+                  costoEnvio()
+            } 
+                  
+      })
+}

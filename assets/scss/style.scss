@@ -137,6 +137,32 @@ p {
     }
 }
 
+#envio_checkout {
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+    button {
+        background-color: $color_texto-hover_active;
+        color:$color_texto-a;
+    }
+}
+
+#info_envio {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    gap: 10px;
+    .envioInfo {
+        input, select {
+            width: 100%;
+        }
+        span {
+            font-size: 0.9rem;
+        }
+    }
+}
+
+
 #productosCarrito {
     #productoCarrito {
         

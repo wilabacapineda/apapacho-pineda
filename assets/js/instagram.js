@@ -1,3 +1,5 @@
+const insta_feed = document.getElementById("insta_feed")
+
 fetch('https://feeds.behold.so/26PBgsa3kl4KFdoHcecV')
   .then(data => data.json())
   .then(photos => {
@@ -29,8 +31,7 @@ fetch('https://feeds.behold.so/26PBgsa3kl4KFdoHcecV')
               insta_div.id=id
               insta_div.className="card instagram_img"
               insta_div.append(insta_a)
-
-        const insta_feed = document.getElementById("insta_feed")
-              insta_feed.append(insta_div)
+        
+        insta_feed.append(insta_div)
     });
   });
