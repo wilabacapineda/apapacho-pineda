@@ -1,4 +1,4 @@
-- Se agrega a Página Principal Feed de instagram a utilizando fetch y api de https://behold.so/
+- Se agrega a Página Principal Feed de instagram utilizando fetch y api de https://behold.so/
 - Se hace funcional la página de contacto utilizando action y post a través de api https://formsubmit.co/
 - Se añade archivo contacto.js para codigo de interacción al enviar formulario. Se crea codigo utilizando fetch como metodo POST para esperar respuesta de envío realizado y gracias en página de contacto.
 - Se agrega listado de productos en archivo /assets/js/stock.json
