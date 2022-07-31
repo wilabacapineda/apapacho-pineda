@@ -214,6 +214,14 @@ p {
     }
     
 }
+
+#submitted_text {
+    width: 100%;
+    display: block;
+    padding: 1rem;
+    background: $color_text_gold;
+    margin-bottom: 1rem;
+}
 /* Header */
     header{
 
@@ -261,7 +269,7 @@ p {
     
             .navbar-nav {
                 .nav-link {
-                    color: black;
+                    color: $color_texto_primario;
                     padding-left: 1rem;
                     padding-right: 1rem;
     
@@ -280,7 +288,7 @@ p {
     
                 li a {
                     &:link {
-                        color: black;
+                        color: $color_texto_primario;
                     }
                     &:active,&:focus {
                         background-color: $color_texto-hover_active;
@@ -413,8 +421,8 @@ p {
         width: 100%;
         text-align: center;
         padding: 1rem;
-        background: goldenrod;
-        color: black;
+        background: $color_text_gold;
+        color: $color_texto_primario;
         font-weight: bold;
     }
     .productos .row {
@@ -489,7 +497,7 @@ p {
         }
     }
     .filter_color, .filter_talla{
-        color:black;
+        color:$color_texto_primario;
         text-decoration: none;
     }
     .cuadrado {
@@ -713,7 +721,7 @@ p {
                 .instagram_img {
                     max-width: map-get($map: $anchos, $key: max-item);
                     @include margin-pad(0.5rem,0.5rem);
-                    background: black;
+                    background: $color_texto_primario;
                     justify-content: center;
 
                     img{
@@ -783,15 +791,15 @@ p {
                     text-decoration: none;
     
                     &:hover{
-                        color:lightgray;
+                        color:rgb(194, 135, 135);
                     }
                 }
             }
         }       
 
         .atribucion {
-            background-color: goldenrod;
-            color:black;
+            background-color: $color_text_gold;
+            color:$color_texto_primario;
             @include margin-pad("cero",0.5rem 0);
         }
 
@@ -817,7 +825,7 @@ p {
             max-height: $alto_section;    
 
             .tabla_tallas {
-                border-color: black;
+                border-color: $color_texto_primario;
                 border-style: groove;
                 margin: 0;
 

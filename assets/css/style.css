@@ -142,6 +142,13 @@ img {
     font-size: 2rem;
     padding: 0 1rem; }
 
+#submitted_text {
+  width: 100%;
+  display: block;
+  padding: 1rem;
+  background: goldenrod;
+  margin-bottom: 1rem; }
+
 /* Header */
 header .logo {
   display: flex;
@@ -171,7 +178,7 @@ header .principal-nav {
   header .principal-nav > .container-fluid {
     padding: 0; }
   header .principal-nav .navbar-nav .nav-link {
-    color: black;
+    color: #000;
     padding-left: 1rem;
     padding-right: 1rem; }
     header .principal-nav .navbar-nav .nav-link:hover {
@@ -181,7 +188,7 @@ header .principal-nav {
       background-color: #6BA4B0;
       color: #fff; }
   header .principal-nav .navbar-nav li a:link {
-    color: black; }
+    color: #000; }
   header .principal-nav .navbar-nav li a:active, header .principal-nav .navbar-nav li a:focus {
     background-color: #6BA4B0;
     color: #fff; }
@@ -289,7 +296,7 @@ header .menu_tienda {
   text-align: center;
   padding: 1rem;
   background: goldenrod;
-  color: black;
+  color: #000;
   font-weight: bold; }
 
 .productos .row {
@@ -343,7 +350,7 @@ header .menu_tienda {
       text-decoration: none; }
 
 .filter_color, .filter_talla {
-  color: black;
+  color: #000;
   text-decoration: none; }
 
 .cuadrado {
@@ -521,7 +528,7 @@ header .menu_tienda {
         max-width: 250px;
         margin: 0.5rem;
         padding: 0.5rem;
-        background: black;
+        background: #000;
         justify-content: center; }
         .instagram .tela .row .instagram_img img {
           max-width: 250px;
@@ -563,10 +570,10 @@ footer {
         color: #fff;
         text-decoration: none; }
         footer .container .row .footer_contacto a:hover {
-          color: lightgray; }
+          color: #c28787; }
   footer .atribucion {
     background-color: goldenrod;
-    color: black;
+    color: #000;
     padding: 0.5rem 0; }
 
 /*Contact Form */
@@ -585,7 +592,7 @@ footer {
     overflow: auto;
     max-height: 500px; }
     .tabla_cat .tabla_overflow .tabla_tallas {
-      border-color: black;
+      border-color: #000;
       border-style: groove;
       margin: 0; }
       .tabla_cat .tabla_overflow .tabla_tallas th {
