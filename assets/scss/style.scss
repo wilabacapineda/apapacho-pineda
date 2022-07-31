@@ -217,10 +217,21 @@ p {
 
 #submitted_text {
     width: 100%;
-    display: block;
     padding: 1rem;
     background: $color_text_gold;
     margin-bottom: 1rem;
+    display: none;
+}
+#enviando {
+    display: none;    
+    &.prender {
+        background: rgba(0,0,0,0.1);   
+        position: absolute;         
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 1rem;
+    }
 }
 /* Header */
     header{

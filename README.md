@@ -1,6 +1,9 @@
-- Se agrega a Página Principal feed de instagram a utilizando https://behold.so/
+- Se agrega a Página Principal Feed de instagram a utilizando fetch y api de https://behold.so/
+- Se hace funcional la página de contacto utilizando action y post a través de api https://formsubmit.co/
+- Se añade archivo contacto.js para codigo de interacción al enviar formulario. Se crea codigo utilizando fetch como metodo POST para esperar respuesta de envío realizado y gracias en página de contacto.
 - Se agrega listado de productos en archivo /assets/js/stock.json
 - Se agrega listado de regiones y comunas de envío en chile en archivo /assets/js/comunas.json
 - El archivo stock.json se carga a través de Fetch y se agregan los productos al array de objetos productos.
-- Se agrega página de Carro de Compras y se añade la opción de elegir región y comuna en chile para envío. Al igual que stock.json se interactua con la opción de envío utilizando fetch.
-- Se agrega filtrado de productos en Tienda
+- Se agrega filtrado de productos en Tienda.
+- Se agrega página de Carro de Compras y se añade la opción de Envío. Se necesita elegir región y comuna en chile como minimo para calculo de costo de envío. Al igual que stock.json se interactua con la opción de envío utilizando fetch.
+- Se utiliza sweetalert para mensajes pop-up de la página. 
