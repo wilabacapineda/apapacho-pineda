@@ -45,7 +45,7 @@ if(enviar_correo){
                 console.log(error)
             }) 
         } else {
-            console.log("no valido")
+            Swal.fire('Ingrese correctamente todos los campos requeridos')
         }                          
     })
 }
@@ -62,7 +62,7 @@ const validate_form = () => {
     }
 
     const exp_tel = /^(\+?56)?(\s?)(0?9)(\s?)[98765432]\d{7}$/
-    const tel = document.getElementById("inputTel")
+    const tel = document.getElementById("inputTel").value
     if (!exp_tel.test(tel)){
         todo_correcto = false
     }
