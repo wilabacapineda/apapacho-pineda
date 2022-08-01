@@ -159,6 +159,9 @@ img {
     align-items: center;
     border-radius: 1rem; }
 
+.requerido {
+  color: red; }
+
 /* Header */
 header .logo {
   display: flex;

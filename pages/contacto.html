@@ -89,25 +89,26 @@
                     <div id="enviando"></div>               
                     <form class="row g-3" action="https://formsubmit.co/4913ef988825dc4a832f28286317e7cb" method="POST" id="enviar_correo" >
                         <div class="col-12">
-                            <label for="inputName4" class="form-label">Nombre</label>
-                            <input type="text" name="name" class="form-control" id="inputName4" placeholder="Nombre Apellido" aria-label="Nombre">
+                            <label for="inputName4" class="form-label">Nombre<span class="requerido">*</span></label>
+                            <input required type="text" name="name" class="form-control" id="inputName4" placeholder="Nombre Apellido" aria-label="Nombre">
                         </div>
                         <div class="col-md-12">
-                          <label for="inputEmail4" class="form-label">Correo Eléctronico</label>
-                          <input type="email" name="email" class="form-control" id="inputEmail4" placeholder="correo@correo.com">
+                          <label for="inputEmail4" class="form-label">Correo Eléctronico<span class="requerido">*</span></label>
+                          <input required type="email" name="email" class="form-control" id="inputEmail4" placeholder="correo@correo.com">
                         </div>
                         <div class="col-12">
-                          <label for="inputTel" class="form-label">Télefono</label>
-                          <input type="tel" name="telefone" class="form-control" id="inputTel" placeholder="+56987654321">
+                          <label for="inputTel" class="form-label">Télefono<span class="requerido">*</span></label>
+                          <input required type="tel" name="telefone" class="form-control" id="inputTel" placeholder="+56987654321">
                         </div>
                         <div class="col-12">
                             <label for="inputSubject" class="form-label">Asunto</label>
-                            <input type="tel" name="subject" class="form-control" id="inputSubject" placeholder="Escriba el asunto">
+                            <input type="text" name="subject" class="form-control" id="inputSubject" placeholder="Escriba el asunto">
                         </div>
                         <div class="col-12">
-                            <label for="textareaMessage" class="form-label">Mensaje</label>
-                            <textarea class="form-control" name="message" id="textareaMessage" rows="3" placeholder="Escriba aquí el mensaje"></textarea>
+                            <label for="textareaMessage" class="form-label">Mensaje<span class="requerido">*</span></label>
+                            <textarea required class="form-control" name="message" id="textareaMessage" rows="3" placeholder="Escriba aquí el mensaje"></textarea>
                         </div>
+                        <div class="col-12 requerido">*Valor requerido</div>
                         <div class="col-12">
                             <button type="submit" class="btn btn-primary">Enviar</button>
                         </div>
