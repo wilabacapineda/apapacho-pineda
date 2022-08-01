@@ -42,6 +42,8 @@ if(enviar_correo){
             .catch((error) => {
                 submitted_text.style.display="block"
                 submitted_text.innerHTML="Error al enviar el correo, por favor intente nuevamente"
+                enviando.innerHTML=""
+                enviando.className=""
                 console.log(error)
             }) 
         } else {
