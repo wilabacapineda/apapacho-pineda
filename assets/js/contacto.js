@@ -26,18 +26,11 @@ if(enviar_correo){
                 body: formData
             })
             .then(res => {
-                if(res.statusText=="OK" || res.ok == true){
-                    enviando.innerHTML=""
-                    enviando.className=""
-                    submitted_text.style.display="block"
-                    submitted_text.innerHTML="Gracias por escribirnos! su correo será respondido a la brevedad"
-                    enviar_correo.style.display="none"
-                } else {
-                    enviando.innerHTML=""
-                    enviando.className=""
-                    submitted_text.style.display="block"
-                    submitted_text.innerHTML="Error al enviar el correo, por favor intente nuevamente"
-                }
+                enviando.innerHTML=""
+                enviando.className=""
+                submitted_text.style.display="block"
+                submitted_text.innerHTML="Gracias por escribirnos! su correo será respondido a la brevedad"
+                enviar_correo.style.display="none"                
             })
             .catch((error) => {
                 submitted_text.style.display="block"
