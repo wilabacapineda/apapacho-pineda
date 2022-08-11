@@ -25,6 +25,6 @@
   "dependencies": {
     "glob-parent": "^6.0.2",
     "got": "^12.1.0",
-    "scss-tokenizer": "^0.4.2"
+    "scss-tokenizer": "^0.4.3"
   }
 }
